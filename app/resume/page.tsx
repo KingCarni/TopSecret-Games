@@ -184,7 +184,7 @@ export default function ResumePage() {
               tested, and backed up.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <ActionLink href="https://www.linkedin.com" label="View LinkedIn" external variant="primary" />
+              <ActionLink href="https://www.linkedin.com/in/harley-curtis-/" label="View LinkedIn" external variant="primary" />
               <ActionLink href="/projects" label="View Projects" />
             </div>
           </div>
