@@ -1,0 +1,234 @@
+import { ImageResponse } from "next/og";
+
+export const runtime = "edge";
+export const alt = "Top Secret Games";
+export const size = {
+  width: 1200,
+  height: 630,
+};
+export const contentType = "image/png";
+
+export default async function Image() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          background: "#050505",
+          color: "white",
+          position: "relative",
+          fontFamily: "Arial, sans-serif",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "radial-gradient(circle at 18% 25%, rgba(250,204,21,0.12), transparent 28%), radial-gradient(circle at 82% 30%, rgba(220,38,38,0.08), transparent 24%), radial-gradient(circle at 60% 85%, rgba(250,204,21,0.06), transparent 28%)",
+          }}
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            top: 26,
+            left: 40,
+            right: 40,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            fontSize: 20,
+            letterSpacing: "0.35em",
+            textTransform: "uppercase",
+            color: "#fde047",
+          }}
+        >
+          <div>Top Secret Games</div>
+          <div style={{ color: "#a1a1aa", letterSpacing: "0.2em", fontSize: 16 }}>
+            Match Majesty
+          </div>
+        </div>
+
+        <div
+          style={{
+            zIndex: 1,
+            width: "100%",
+            display: "flex",
+            padding: "90px 60px 50px",
+            gap: 40,
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{
+              width: 620,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 18,
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.35em",
+                color: "#f87171",
+                marginBottom: 18,
+              }}
+            >
+              Classified Projects In Development
+            </div>
+
+            <div
+              style={{
+                fontSize: 78,
+                lineHeight: 0.95,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <span style={{ color: "white" }}>Classified Worlds.</span>
+              <span style={{ color: "#facc15" }}>Playable Secrets.</span>
+            </div>
+
+            <div
+              style={{
+                marginTop: 26,
+                fontSize: 24,
+                lineHeight: 1.5,
+                color: "#d4d4d8",
+                maxWidth: 560,
+              }}
+            >
+              Indie studio building stylish, mysterious, and delightfully playable games.
+            </div>
+          </div>
+
+          <div
+            style={{
+              width: 380,
+              height: 380,
+              display: "flex",
+              position: "relative",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                inset: 20,
+                borderRadius: 40,
+                background: "rgba(250,204,21,0.08)",
+                filter: "blur(28px)",
+              }}
+            />
+
+            <div
+              style={{
+                position: "relative",
+                width: 330,
+                height: 300,
+                borderRadius: 36,
+                border: "3px solid rgba(161,98,7,0.45)",
+                background: "linear-gradient(180deg, #332100 0%, #8c6500 55%, #5f4300 100%)",
+                padding: 18,
+                display: "flex",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: 18,
+                  left: 26,
+                  width: 110,
+                  height: 28,
+                  borderRadius: "18px 18px 14px 0",
+                  background: "#e4bb52",
+                  border: "2px solid rgba(120,53,15,0.2)",
+                }}
+              />
+
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: 28,
+                  border: "2px solid rgba(120,53,15,0.25)",
+                  background: "linear-gradient(180deg, #d9a629 0%, #d8aa37 55%, #a8760f 100%)",
+                  padding: 22,
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: 24,
+                    border: "2px solid rgba(120,53,15,0.18)",
+                    background: "#e8bd5a",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                  }}
+                >
+                  <div
+                    style={{
+                      transform: "rotate(-6deg)",
+                      borderRadius: 14,
+                      border: "4px solid #991b1b",
+                      background: "#dc2626",
+                      color: "white",
+                      padding: "14px 24px",
+                      fontWeight: 900,
+                      fontSize: 28,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      textAlign: "center",
+                    }}
+                  >
+                    Top Secret Games
+                  </div>
+
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 38,
+                      fontSize: 16,
+                      fontWeight: 700,
+                      letterSpacing: "0.32em",
+                      textTransform: "uppercase",
+                      color: "#5f2b00",
+                    }}
+                  >
+                    Authorized Access
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  position: "absolute",
+                  right: -4,
+                  top: 36,
+                  width: 16,
+                  height: 16,
+                  borderRadius: "999px",
+                  background: "rgba(220,38,38,0.9)",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    size
+  );
+}
