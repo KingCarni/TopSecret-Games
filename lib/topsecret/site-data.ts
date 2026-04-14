@@ -21,6 +21,13 @@ export type ProjectMedia = {
   imageAlt?: string;
 };
 
+export type ProjectDetailSection = {
+  label: string;
+  title: string;
+  body: string;
+  accent: string;
+};
+
 export type Project = {
   slug: string;
   name: string;
@@ -33,6 +40,7 @@ export type Project = {
   tech: string[];
   links: ProjectLink[];
   media: ProjectMedia;
+  detailSections: ProjectDetailSection[];
 };
 
 export type ResumeRole = {
@@ -84,22 +92,64 @@ export const projects: Project[] = [
     status: "Active",
     short: "AI workspace and command center for deeper project execution.",
     summary:
-      "NOVA is a builder-focused AI workspace for longer-running project execution. It is meant to hold context, support structured thinking, and give creative or technical work a cleaner operating surface than a disposable chat window.",
+      "NOVA is a builder-focused AI workspace for longer-running project execution. It is designed to preserve context, support structured thinking, and give complex creative or technical work a stronger operating surface than a disposable chat window.",
     currentFocus:
-      "Workspace structure, context handling, and a stronger long-running product shape.",
+      "Workspace architecture, context carry-forward, project memory, and a more durable product surface for longer-running execution.",
     whyItMatters:
-      "It proves the studio can build productized AI experiences with real workflow intent, not just one-off prompts or concept pages.",
-    tech: ["Next.js", "TypeScript", "Prisma", "App Router", "Workspace UI"],
+      "It proves the studio can build productized AI experiences with real workflow intent, stronger continuity, and systems thinking beyond one-off prompt wrappers.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "App Router",
+      "Prisma",
+      "Neon",
+      "Vercel",
+      "Git",
+      "VS Code",
+      "Codex",
+      "AI tools",
+      "Workspace UI",
+    ],
     links: [
       { label: "Follow Development", href: "/now-building", hideOnDetail: true },
       { label: "Live Surface Later", href: "/now-building" },
     ],
     media: {
-      eyebrow: "Preview lane",
-      title: "Structured workspace surface",
+      eyebrow: "Curated media slot",
+      title: "NOVA",
       caption:
-        "Swap this panel with a public-safe NOVA UI crop, architecture board, or focused product screenshot later.",
+        "NOVA screenshots are currently 'Classified'.",
     },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "An AI workspace built for real project continuity",
+        body:
+          "NOVA is being shaped as a serious workspace for work that outgrows disposable chats. The goal is persistent context, structured execution, and a cleaner command surface for longer-running creative and technical projects.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Current direction",
+        title: "Context, memory, and operating clarity",
+        body:
+          "The current work is focused on how projects are represented, how context is carried forward, and how the interface supports actual execution instead of isolated prompt-response sessions.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "A real product lane, not a chat reskin",
+        body:
+          "NOVA matters because it pushes the studio into AI product design with a sharper systems point of view. It is meant to feel like a working environment, not a novelty wrapper around generic model access.",
+        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
+      },
+      {
+        label: "NOVA",
+        title: "Neural Operator & Virtual Assistant",
+        body:
+          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, sturctured execution, and brainstorming — turning thoughts into organized actions.",
+        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+      },
+    ],
   },
   {
     slug: "git-a-job",
@@ -108,12 +158,25 @@ export const projects: Project[] = [
     status: "Live",
     short: "ATS-aware resume and cover-letter tool built for real job seekers.",
     summary:
-      "Git-a-Job is a practical utility product focused on resume improvement, ATS alignment, and stronger job application materials. It is built around usability, affordability, and clear value for real job seekers.",
+      "Git-a-Job is a practical hiring utility built to help real job seekers improve resumes, align with ATS constraints, and create stronger application materials without bloated pricing, vague promises, or fake magic.",
     currentFocus:
-      "Trust, polish, UX consistency, and practical utility improvements for job seekers.",
+      "2.0 job search and apply - stronger search flow, clearer fit signals, more credible trust cues, and a more useful application surface for real candidates.",
     whyItMatters:
-      "It is real shipped software with a clear audience, product constraints, and practical market positioning.",
-    tech: ["Next.js", "Tailwind", "Prisma", "Stripe", "Resume parsing"],
+      "It is real shipped software with a live audience, real product constraints, and practical decisions around UX, pricing, parsing, and conversion.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Prisma",
+      "Neon",
+      "Stripe",
+      "Vercel",
+      "Git",
+      "VS Code",
+      "Codex",
+      "AI tools",
+      "Resume parsing",
+    ],
     links: [
       { label: "Open Live Site", href: "https://git-a-job.com", external: true },
       { label: "Resume Proof", href: "/resume" },
@@ -122,8 +185,38 @@ export const projects: Project[] = [
       eyebrow: "Product preview",
       title: "Utility-first product surface",
       caption:
-        "Replace with a polished Git-a-Job dashboard crop, landing screenshot, or product flow panel when ready.",
+        "The live product already carries the public experience. This page exists to frame the build, the proof, and the product decisions behind it.",
     },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "A practical tool for real job seekers",
+        body:
+          "Git-a-Job is built to help users strengthen resumes, align with ATS expectations, and generate more useful application materials without leaning on fluff, subscription bloat, or empty AI hype.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Current direction",
+        title: "Trust, utility, and stronger product clarity",
+        body:
+          "The main push now is improving the end-to-end candidate flow, sharpening fit signals, and making the value proposition more obvious, useful, and credible for people actively trying to land interviews.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "Shipped software with real stakes",
+        body:
+          "This is not portfolio filler. It is a live product with real users, real tradeoffs, and real implementation choices around parsing, payments, usability, and conversion.",
+        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
+      },
+      {
+        label: "Public access",
+        title: "Git-a-job.com",
+        body:
+          "Currently, Git-a-job V 1.0 is live. Version 2.0 will allow for Job search and apply, recommendations based on fit and preference, notifications of relevant roles. V.2.0 is expected to release April 17th, 2026",
+        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+      },
+    ],
   },
   {
     slug: "match-majesty",
@@ -132,22 +225,62 @@ export const projects: Project[] = [
     status: "Next",
     short: "Fantasy match-3 prototype with room for deeper progression systems.",
     summary:
-      "Match Majesty is a fantasy match-3 project with room to grow into deeper progression loops, kingdom-building, and expandable systems work. It represents UI iteration, gameplay tuning, and prototype discipline.",
+      "Match Majesty is a fantasy match-3 project with kingdom-building systems, and longer-tail gameplay depth.",
     currentFocus:
-      "Gameplay flow, progression planning, and clarity in the core loop.",
+      "Core loop readability, progression planning, HUD and interface clarity, and creating a modularsystem with room to expand.",
     whyItMatters:
-      "It shows the studio can carry product-level thinking into playable game systems and not just present game ideas as loose concepts.",
-    tech: ["Godot", "Gameplay systems", "UI", "Progression design"],
+      "It shows the studio can carry systems thinking into playable game design and not just present game ideas as loose concepts or mood boards.",
+    tech: [
+      "Godot",
+      "GDScript",
+      "Gameplay systems",
+      "UI systems",
+      "Progression design",
+      "Git",
+      "VS Code",
+      "Codex",
+      "AI tools",
+    ],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Gameplay Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Gameplay slot",
-      title: "Board, UI, and progression preview",
+      eyebrow: "Curated media slot",
+      title: "Match Majesty",
       caption:
-        "Use this slot for a board screenshot, HUD crop, or progress mockup once a public-safe capture is ready.",
+        "Match Majesty is the early studio-facing surface for the match-3 concept, progression lane, and broader kingdom-building direction.",
     },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "A match-3 project with real systems upside",
+        body:
+          "Match Majesty is a polished match-3 foundation, but the real opportunity is in the surrounding systems: progression, world growth, interface clarity, and the ability to expand into something more layered than a simple puzzle prototype.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Current direction",
+        title: "Core loop clarity first",
+        body:
+          "The current work is focused on making the gameplay read cleanly, tightening progression structure, and improving the modular system so the project feels like a credible systems-driven game.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "Proof of game systems thinking",
+        body:
+          "This project proves the studio can do more than talk about game ideas. It is a working lane for systems design, gameplay iteration, presentation discipline, and future feature planning.",
+        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
+      },
+      {
+        label: "Public access",
+        title: "User Test Play Opportunities",
+        body:
+          "Match Majesty is currently in the confidential TOP SECRET files. Playable demo TBA.",
+        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+      },
+    ],
   },
   {
     slug: "deady-bears-nightmare",
@@ -156,22 +289,62 @@ export const projects: Project[] = [
     status: "Later",
     short: "Horror project built around atmosphere, identity, and creative direction.",
     summary:
-      "Deady Bear's Nightmare is a horror game project built around atmosphere, identity, and a stronger production-facing creative direction. It gives the studio a darker lane with sharper personality.",
+      "Deady Bear's Nightmare is a horror game project centered on atmosphere, tonal identity, and a stronger production-facing creative direction. It gives the studio a darker lane with sharper personality and a more memorable edge.",
     currentFocus:
-      "Direction-setting, atmosphere, and production-facing identity work.",
+      "Direction-setting, atmosphere, interaction pillars, and production-facing identity work before any public release surface is needed.",
     whyItMatters:
-      "It expands the studio beyond utility products into mood, worldbuilding, and memorable experiential design.",
-    tech: ["Godot", "Horror design", "Atmosphere", "Interaction"],
+      "It expands the studio beyond utility products and cleaner systems work into mood, tension, world feel, and more distinct experiential design.",
+    tech: [
+      "Godot",
+      "GDScript",
+      "Horror design",
+      "Atmosphere design",
+      "Interaction design",
+      "Git",
+      "VS Code",
+      "Codex",
+      "AI tools",
+    ],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Horror Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Mood slot",
-      title: "Atmosphere and identity preview",
+      eyebrow: "Curated media slot",
+      title: "Deady Bear's Nightmare",
       caption:
-        "Drop in a title treatment, environment crop, or mood-forward frame once the public-facing art lane is ready.",
+        "Deady Bear's Nightmare is being framed around atmosphere, identity, and production-facing direction before any public release surface is needed.",
     },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "A horror lane built around atmosphere and identity",
+        body:
+          "Deady Bear's Nightmare is the darker side of the studio slate. The project is a memorable horror lane, unorthodox, and boasts a clear creative identity and unique flavor from the start.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Current direction",
+        title: "Creative framing before feature sprawl",
+        body:
+          "The current work is about setting the right production-facing direction, interaction pillars, and atmospheric identity so the project has a stronger foundation before broader implementation work starts pulling it in too many directions.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "Creative range with sharper personality",
+        body:
+          "It proves the studio is not boxed into utility tools and cleaner systems products. This lane brings in mood, tension, tonal control, and a more distinct creative fingerprint.",
+        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
+      },
+      {
+        label: "Public access",
+        title: "User Test Play Opportunities",
+        body:
+          "Deady Bear's Nightmare is currently in the confidential TOP SECRET files. Playable demo TBA.",
+        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+      },
+    ],
   },
 ];
 
@@ -253,22 +426,22 @@ export const nowBuilding = [
   {
     title: "NOVA",
     phase: "Active",
-    detail: "Workspace structure, context handling, and a stronger long-running product shape.",
+    detail: "Workspace architecture, context carry-forward, project memory, and a stronger long-running execution surface.",
   },
   {
     title: "Git-a-Job",
     phase: "Active",
-    detail: "Trust, polish, UX consistency, and practical utility improvements for job seekers.",
+    detail: "2.0 job search and apply, clearer fit signals, stronger trust cues, and a more useful candidate flow.",
   },
   {
     title: "Match Majesty",
     phase: "Next",
-    detail: "Gameplay flow, progression planning, and clarity in the core loop.",
+    detail: "Core loop readability, progression planning, and interface clarity for a stronger systems-first prototype.",
   },
   {
     title: "Deady Bear's Nightmare",
     phase: "Later",
-    detail: "Direction-setting, atmosphere, and production-facing identity work.",
+    detail: "Direction-setting, atmosphere, interaction pillars, and a stronger production-facing horror identity.",
   },
 ];
 
