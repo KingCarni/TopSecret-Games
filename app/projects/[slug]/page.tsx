@@ -70,7 +70,8 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
 
   const detailLinks = project.links.filter((link) => !link.hideOnDetail);
-  const showGitJobPreview = project.slug === "git-a-job";
+  const mediaImageSrc = project.slug === "git-a-job" ? "/git-a-job-preview.png" : project.media.imageSrc;
+  const mediaImageAlt = project.slug === "git-a-job" ? "Git-a-Job product preview" : project.media.imageAlt ?? `${project.name} project media`;
 
   return (
     <main className="bg-black text-white">
@@ -107,14 +108,14 @@ export default async function ProjectDetailPage({
             <div className="relative overflow-hidden rounded-[28px] border border-[#0d8a73]/35 bg-[linear-gradient(180deg,rgba(5,18,16,0.84)_0%,rgba(6,12,16,0.72)_100%)] p-5 shadow-[0_0_0_1px_rgba(13,138,115,0.16),0_0_34px_rgba(0,120,104,0.10)] md:p-6">
               <div className="absolute inset-x-0 top-0 h-20 bg-[radial-gradient(circle_at_16%_0%,rgba(0,192,158,0.12),transparent_42%),radial-gradient(circle_at_76%_0%,rgba(7,105,94,0.10),transparent_36%)]" />
               <p className="relative text-xs font-semibold uppercase tracking-[0.32em] text-[#66f0d0]">
-                {showGitJobPreview ? "Product preview" : "Project surface"}
+                {project.media.eyebrow}
               </p>
 
-              {showGitJobPreview ? (
+              {mediaImageSrc ? (
                 <div className="relative mt-5 overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(9,16,25,0.96)_0%,rgba(6,12,20,0.92)_100%)] p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.015),0_0_24px_rgba(0,124,108,0.08)]">
                   <Image
-                    src="/git-a-job-preview.png"
-                    alt="Git-a-Job product preview"
+                    src={mediaImageSrc}
+                    alt={mediaImageAlt}
                     width={1200}
                     height={760}
                     className="h-auto w-full rounded-2xl border border-white/10"
