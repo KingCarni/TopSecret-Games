@@ -146,7 +146,7 @@ export const projects: Project[] = [
         label: "NOVA",
         title: "Neural Operator & Virtual Assistant",
         body:
-          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, sturctured execution, and brainstorming — turning thoughts into organized actions.",
+          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, structured execution, and brainstorming — turning thoughts into organized actions.",
         accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
@@ -227,7 +227,7 @@ export const projects: Project[] = [
     summary:
       "Match Majesty is a fantasy match-3 project with kingdom-building systems, and longer-tail gameplay depth.",
     currentFocus:
-      "Core loop readability, progression planning, HUD and interface clarity, and creating a modularsystem with room to expand.",
+      "Core loop readability, progression planning, HUD and interface clarity, and creating a modular system with room to expand.",
     whyItMatters:
       "It shows the studio can carry systems thinking into playable game design and not just present game ideas as loose concepts or mood boards.",
     tech: [
@@ -283,65 +283,75 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "deady-bears-nightmare",
-    name: "Deady Bear's Nightmare",
-    category: "Game",
-    status: "Later",
-    short: "Horror project built around atmosphere, identity, and creative direction.",
+    slug: "qatalyst",
+    name: "QAtalyst",
+    category: "AI Product",
+    status: "Active",
+    short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
     summary:
-      "Deady Bear's Nightmare is a horror game project centered on atmosphere, tonal identity, and a stronger production-facing creative direction. It gives the studio a darker lane with sharper personality and a more memorable edge.",
+      "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds. It is built around real QA workflows, with planned Jira, TestRail, and Playwright integrations.",
     currentFocus:
-      "Direction-setting, atmosphere, interaction pillars, and production-facing identity work before any public release surface is needed.",
+      "QAtalyst is focused on QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, rule handling, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
     whyItMatters:
-      "It expands the studio beyond utility products and cleaner systems work into mood, tension, world feel, and more distinct experiential design.",
+      "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst helps speed that up while keeping human QA judgment in control.",
     tech: [
-      "Godot",
-      "GDScript",
-      "Horror design",
-      "Atmosphere design",
-      "Interaction design",
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Prisma",
+      "Neon",
+      "Stripe",
+      "Vercel",
       "Git",
       "VS Code",
       "Codex",
       "AI tools",
+      "Jira",
+      "TestRail",
+      "Playwright",
+      "QAt triage",
+      "Ticket generation",
+      "Test case generation",
+      "Bug report drafting",
+      "QA workflow automation",
     ],
     links: [
+      { label: "Open QAtalystStudio.com", href: "https://qatalyststudio.com", external: true },
       { label: "Studio Overview", href: "/now-building" },
-      { label: "Horror Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Curated media slot",
-      title: "Deady Bear's Nightmare",
+      eyebrow: "Product preview",
+      title: "QAtalyst",
       caption:
-        "Deady Bear's Nightmare is being framed around atmosphere, identity, and production-facing direction before any public release surface is needed.",
+        "QAtalyst now has its own product home at QAtalystStudio.com. This studio page explains the build, the workflow, and the systems thinking behind it.",
     },
     detailSections: [
       {
         label: "What it is",
-        title: "A horror lane built around atmosphere and identity",
+        title: "An AI-assisted QA workspace for real testing work",
         body:
-          "Deady Bear's Nightmare is the darker side of the studio slate. The project is a memorable horror lane, unorthodox, and boasts a clear creative identity and unique flavor from the start.",
+          "QAtalyst is built for testers, producers, and lean product teams. It turns Jira tickets, specs, feature notes, and rough QA thoughts into practical test cases, triage notes, risk callouts, bug reports, and clean tickets in seconds.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
-        title: "Creative framing before feature sprawl",
+        title: "QAt triage, tickets, and test artifacts",
         body:
-          "The current work is about setting the right production-facing direction, interaction pillars, and atmospheric identity so the project has a stronger foundation before broader implementation work starts pulling it in too many directions.",
+          "The current build is centered on QAt triage, ticket-to-test-case generation, fast ticket drafting, bug report support, test modification, and a project brain that can remember rules, terminology, and product context over time.",
         accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
       {
         label: "Why it matters",
-        title: "Creative range with sharper personality",
+        title: "Less QA prep drag, more useful release signal",
         body:
-          "It proves the studio is not boxed into utility tools and cleaner systems products. This lane brings in mood, tension, tonal control, and a more distinct creative fingerprint.",
+          "QA work often gets buried under vague requirements, scattered notes, and release pressure. QAtalyst reduces the manual prep work and helps teams move from messy input to usable QA artifacts faster, without replacing human judgment.",
         accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
       },
       {
-        label: "Public access",
-        title: "User Test Play Opportunities",
+        label: "Integrations",
+        title: "Jira, TestRail, and Playwright in the workflow",
         body:
-          "Deady Bear's Nightmare is currently in the confidential TOP SECRET files. Playable demo TBA.",
+          "QAtalyst is being shaped around practical QA toolchains: Jira for triage and ticket flow, TestRail for test case management, and Playwright for automation-adjacent coverage planning and future workflow support.",
         accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
@@ -439,9 +449,9 @@ export const nowBuilding = [
     detail: "Core loop readability, progression planning, and interface clarity for a stronger systems-first prototype.",
   },
   {
-    title: "Deady Bear's Nightmare",
-    phase: "Later",
-    detail: "Direction-setting, atmosphere, interaction pillars, and a stronger production-facing horror identity.",
+    title: "QAtalyst",
+    phase: "Active",
+    detail: "QAt triage, ticket-to-test-case generation, clean ticket drafting, Jira, TestRail, and Playwright workflow integrations.",
   },
 ];
 
