@@ -86,67 +86,75 @@ export const featuredProof = homepageProof;
 
 export const projects: Project[] = [
   {
-    slug: "nova",
-    name: "NOVA",
+    slug: "qatalyst",
+    name: "QAtalyst",
     category: "AI Product",
     status: "Active",
-    short: "AI workspace and command center for deeper project execution.",
+    short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
     summary:
-      "NOVA is a builder-focused AI workspace for longer-running project execution. It is designed to preserve context, support structured thinking, and give complex creative or technical work a stronger operating surface than a disposable chat window.",
+      "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds. It is built around real QA workflows, with planned Jira, TestRail, and Playwright integrations.",
     currentFocus:
-      "Workspace architecture, context carry-forward, project memory, and a more durable product surface for longer-running execution.",
+      "QAtalyst is focused on QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, rule handling, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
     whyItMatters:
-      "It proves the studio can build productized AI experiences with real workflow intent, stronger continuity, and systems thinking beyond one-off prompt wrappers.",
+      "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst helps speed that up while keeping human QA judgment in control.",
     tech: [
       "Next.js",
       "TypeScript",
-      "App Router",
+      "Tailwind",
       "Prisma",
       "Neon",
+      "Stripe",
       "Vercel",
       "Git",
       "VS Code",
       "Codex",
       "AI tools",
-      "Workspace UI",
+      "Jira",
+      "TestRail",
+      "Playwright",
+      "QAt triage",
+      "Ticket generation",
+      "Test case generation",
+      "Bug report drafting",
+      "QA workflow automation",
     ],
     links: [
-      { label: "Follow Development", href: "/now-building", hideOnDetail: true },
-      { label: "Live Surface Later", href: "/now-building" },
+      { label: "Open QAtalystStudio.com", href: "https://qatalyststudio.com", external: true },
+      { label: "Studio Overview", href: "/now-building" },
     ],
     media: {
-      eyebrow: "Curated media slot",
-      title: "NOVA",
+      eyebrow: "Product preview",
+      title: "QAtalyst",
       caption:
-        "NOVA screenshots are currently 'Classified'.",
+        "QAtalyst now has its own product home at QAtalystStudio.com. This studio page explains the build, the workflow, and the systems thinking behind it.",
     },
     detailSections: [
       {
         label: "What it is",
-        title: "An AI workspace built for real project continuity",
+        title: "An AI-assisted QA workspace for real testing work",
         body:
-          "NOVA is being shaped as a serious workspace for work that outgrows disposable chats. The goal is persistent context, structured execution, and a cleaner command surface for longer-running creative and technical projects.",
+          "QAtalyst is built for testers, producers, and lean product teams. It turns Jira tickets, specs, feature notes, and rough QA thoughts into practical test cases, triage notes, risk callouts, bug reports, and clean tickets in seconds.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
-        title: "Context, memory, and operating clarity",
+        title: "QAt triage, tickets, and test artifacts",
         body:
-          "The current work is focused on how projects are represented, how context is carried forward, and how the interface supports actual execution instead of isolated prompt-response sessions.",
+          "The current build is centered on QAt triage, ticket-to-test-case generation, fast ticket drafting, bug report support, test modification, and a project brain that can remember rules, terminology, and product context over time.",
         accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
       {
         label: "Why it matters",
-        title: "A real product lane, not a chat reskin",
+        title: "Less QA prep drag, more useful release signal",
         body:
-          "NOVA matters because it pushes the studio into AI product design with a sharper systems point of view. It is meant to feel like a working environment, not a novelty wrapper around generic model access.",
+          "QA work often gets buried under vague requirements, scattered notes, and release pressure. QAtalyst reduces the manual prep work and helps teams move from messy input to usable QA artifacts faster, without replacing human judgment.",
         accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
       },
       {
-        label: "NOVA",
-        title: "Neural Operator & Virtual Assistant",
+        label: "Integrations",
+        title: "Jira, TestRail, and Playwright in the workflow",
         body:
-          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, structured execution, and brainstorming — turning thoughts into organized actions.",
+          "QAtalyst is being shaped around practical QA toolchains: Jira for triage and ticket flow, TestRail for test case management, and Playwright for automation-adjacent coverage planning and future workflow support.",
         accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
@@ -283,75 +291,67 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "qatalyst",
-    name: "QAtalyst",
+    slug: "nova",
+    name: "NOVA",
     category: "AI Product",
     status: "Active",
-    short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
+    short: "AI workspace and command center for deeper project execution.",
     summary:
-      "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds. It is built around real QA workflows, with planned Jira, TestRail, and Playwright integrations.",
+      "NOVA is a builder-focused AI workspace for longer-running project execution. It is designed to preserve context, support structured thinking, and give complex creative or technical work a stronger operating surface than a disposable chat window.",
     currentFocus:
-      "QAtalyst is focused on QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, rule handling, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
+      "Workspace architecture, context carry-forward, project memory, and a more durable product surface for longer-running execution.",
     whyItMatters:
-      "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst helps speed that up while keeping human QA judgment in control.",
+      "It proves the studio can build productized AI experiences with real workflow intent, stronger continuity, and systems thinking beyond one-off prompt wrappers.",
     tech: [
       "Next.js",
       "TypeScript",
-      "Tailwind",
+      "App Router",
       "Prisma",
       "Neon",
-      "Stripe",
       "Vercel",
       "Git",
       "VS Code",
       "Codex",
       "AI tools",
-      "Jira",
-      "TestRail",
-      "Playwright",
-      "QAt triage",
-      "Ticket generation",
-      "Test case generation",
-      "Bug report drafting",
-      "QA workflow automation",
+      "Workspace UI",
     ],
     links: [
-      { label: "Open QAtalystStudio.com", href: "https://qatalyststudio.com", external: true },
-      { label: "Studio Overview", href: "/now-building" },
+      { label: "Follow Development", href: "/now-building", hideOnDetail: true },
+      { label: "Live Surface Later", href: "/now-building" },
     ],
     media: {
-      eyebrow: "Product preview",
-      title: "QAtalyst",
+      eyebrow: "Curated media slot",
+      title: "NOVA",
       caption:
-        "QAtalyst now has its own product home at QAtalystStudio.com. This studio page explains the build, the workflow, and the systems thinking behind it.",
+        "NOVA screenshots are currently 'Classified'.",
     },
     detailSections: [
       {
         label: "What it is",
-        title: "An AI-assisted QA workspace for real testing work",
+        title: "An AI workspace built for real project continuity",
         body:
-          "QAtalyst is built for testers, producers, and lean product teams. It turns Jira tickets, specs, feature notes, and rough QA thoughts into practical test cases, triage notes, risk callouts, bug reports, and clean tickets in seconds.",
+          "NOVA is being shaped as a serious workspace for work that outgrows disposable chats. The goal is persistent context, structured execution, and a cleaner command surface for longer-running creative and technical projects.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
-        title: "QAt triage, tickets, and test artifacts",
+        title: "Context, memory, and operating clarity",
         body:
-          "The current build is centered on QAt triage, ticket-to-test-case generation, fast ticket drafting, bug report support, test modification, and a project brain that can remember rules, terminology, and product context over time.",
+          "The current work is focused on how projects are represented, how context is carried forward, and how the interface supports actual execution instead of isolated prompt-response sessions.",
         accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
       {
         label: "Why it matters",
-        title: "Less QA prep drag, more useful release signal",
+        title: "A real product lane, not a chat reskin",
         body:
-          "QA work often gets buried under vague requirements, scattered notes, and release pressure. QAtalyst reduces the manual prep work and helps teams move from messy input to usable QA artifacts faster, without replacing human judgment.",
+          "NOVA matters because it pushes the studio into AI product design with a sharper systems point of view. It is meant to feel like a working environment, not a novelty wrapper around generic model access.",
         accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
       },
       {
-        label: "Integrations",
-        title: "Jira, TestRail, and Playwright in the workflow",
+        label: "NOVA",
+        title: "Neural Operator & Virtual Assistant",
         body:
-          "QAtalyst is being shaped around practical QA toolchains: Jira for triage and ticket flow, TestRail for test case management, and Playwright for automation-adjacent coverage planning and future workflow support.",
+          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, structured execution, and brainstorming — turning thoughts into organized actions.",
         accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
@@ -434,9 +434,9 @@ export const skillGroups = [
 
 export const nowBuilding = [
   {
-    title: "NOVA",
+    title: "QAtalyst",
     phase: "Active",
-    detail: "Workspace architecture, context carry-forward, project memory, and a stronger long-running execution surface.",
+    detail: "QAt triage, ticket-to-test-case generation, clean ticket drafting, Jira, TestRail, and Playwright workflow integrations.",
   },
   {
     title: "Git-a-Job",
@@ -449,9 +449,9 @@ export const nowBuilding = [
     detail: "Core loop readability, progression planning, and interface clarity for a stronger systems-first prototype.",
   },
   {
-    title: "QAtalyst",
+    title: "NOVA",
     phase: "Active",
-    detail: "QAt triage, ticket-to-test-case generation, clean ticket drafting, Jira, TestRail, and Playwright workflow integrations.",
+    detail: "Workspace architecture, context carry-forward, project memory, and a stronger long-running execution surface.",
   },
 ];
 
