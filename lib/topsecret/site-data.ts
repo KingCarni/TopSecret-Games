@@ -127,6 +127,8 @@ export const projects: Project[] = [
       title: "QAtalyst",
       caption:
         "QAtalyst now has its own product home at QAtalystStudio.com. This studio page explains the build, the workflow, and the systems thinking behind it.",
+      imageSrc: "/qatalyst-logo.png",
+      imageAlt: "QAtalyst logo",
     },
     detailSections: [
       {
