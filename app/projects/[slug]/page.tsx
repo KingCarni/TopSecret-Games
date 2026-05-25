@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
 
@@ -79,12 +79,6 @@ export default async function ProjectDetailPage({
 
             <h1 className="mt-6 text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl lg:text-[88px]">
               {project.name}
-              {project.tagline && (
-                <>
-                  <br />
-                  <span className="text-white/40">{project.tagline}.</span>
-                </>
-              )}
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-white/75 md:text-xl">

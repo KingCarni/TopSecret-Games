@@ -1,5 +1,6 @@
 "use client";
 
+import CursorGlow from "@/components/topsecret/shared/CursorGlow";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -127,7 +128,13 @@ export default function HeroLab() {
             }`}
           >
             {/* Floating module 1 — terminal */}
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#080c12]/90 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur">
+            <CursorGlow
+              as="div"
+              className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#080c12]/90 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur"
+              size={340}
+              color="rgba(102, 240, 208, 0.10)"
+              accent="rgba(127, 180, 255, 0.05)"
+            >
               <div className="flex items-center gap-2 border-b border-white/5 px-4 py-3">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
@@ -153,10 +160,16 @@ export default function HeroLab() {
                   </div>
                 ))}
               </div>
-            </div>
+            </CursorGlow>
 
             {/* Floating module 2 — system map */}
-            <div className="absolute -bottom-12 -left-6 w-[78%] rotate-[-3deg] rounded-2xl border border-white/10 bg-[#0a0f17]/90 p-4 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur transition-transform hover:rotate-0">
+            <CursorGlow
+              as="div"
+              className="absolute -bottom-12 -left-6 w-[78%] rotate-[-3deg] rounded-2xl border border-white/10 bg-[#0a0f17]/90 p-4 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] backdrop-blur transition-transform hover:rotate-0"
+              size={280}
+              color="rgba(127, 180, 255, 0.08)"
+              accent="rgba(102, 240, 208, 0.04)"
+            >
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-zinc-500">
                   system map
@@ -180,15 +193,21 @@ export default function HeroLab() {
                   />
                 ))}
               </div>
-            </div>
+            </CursorGlow>
 
             {/* Floating module 3 — badge */}
-            <div className="absolute -right-4 -top-6 rotate-[4deg] rounded-xl border border-white/10 bg-[#0a0f17]/90 px-4 py-3 shadow-xl backdrop-blur transition-transform hover:rotate-0">
+            <CursorGlow
+              as="div"
+              className="absolute -right-4 -top-6 rotate-[4deg] rounded-xl border border-white/10 bg-[#0a0f17]/90 px-4 py-3 shadow-xl backdrop-blur transition-transform hover:rotate-0"
+              size={180}
+              color="rgba(181, 139, 255, 0.08)"
+              accent="rgba(255, 255, 255, 0.03)"
+            >
               <div className="text-[10px] uppercase tracking-[0.22em] text-zinc-500">
                 clearance
               </div>
               <div className="mt-1 font-mono text-sm text-[#66f0d0]">TS-//BUILDER</div>
-            </div>
+            </CursorGlow>
           </div>
         </div>
       </div>

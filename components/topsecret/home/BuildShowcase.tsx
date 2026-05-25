@@ -1,3 +1,5 @@
+import CursorGlow from "@/components/topsecret/shared/CursorGlow";
+
 const qaProof = [
   "5+ years professional QA experience",
   "Console, PC, mobile, and VR platforms",
@@ -34,9 +36,13 @@ export default function BuildShowcase() {
 
             <ul className="mt-10 space-y-3">
               {qaProof.map((q, i) => (
-                <li
+                <CursorGlow
                   key={q}
+                  as="li"
                   className="group flex items-start gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-3 transition-all hover:border-[#66f0d0]/30 hover:bg-white/[0.04]"
+                  size={220}
+                  color="rgba(102, 240, 208, 0.12)"
+                  accent="rgba(127, 180, 255, 0.05)"
                 >
                   <span className="mt-1 font-mono text-[11px] text-zinc-600">
                     0{i + 1}
@@ -45,7 +51,7 @@ export default function BuildShowcase() {
                   <span className="ml-auto text-[#66f0d0] opacity-0 transition-opacity group-hover:opacity-100">
                     ✓
                   </span>
-                </li>
+                </CursorGlow>
               ))}
             </ul>
           </div>
@@ -63,7 +69,13 @@ export default function BuildShowcase() {
               problem found while shipping games and software.
             </p>
 
-            <div className="mt-10 overflow-hidden rounded-2xl border border-white/10">
+            <CursorGlow
+              as="div"
+              className="mt-10 overflow-hidden rounded-2xl border border-white/10"
+              size={420}
+              color="rgba(181, 139, 255, 0.10)"
+              accent="rgba(102, 240, 208, 0.05)"
+            >
               {labBuilds.map((b, i) => (
                 <div
                   key={b.name}
@@ -92,7 +104,7 @@ export default function BuildShowcase() {
                   </span>
                 </div>
               ))}
-            </div>
+            </CursorGlow>
           </div>
         </div>
       </div>

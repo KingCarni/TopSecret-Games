@@ -3,10 +3,10 @@
 import CursorGlow from "@/components/topsecret/shared/CursorGlow";
 
 const ACCENTS = [
-  { stroke: "#66f0d0", glow: "rgba(102,240,208,0.18)" }, // emerald
-  { stroke: "#7fb4ff", glow: "rgba(127,180,255,0.16)" }, // cyan
-  { stroke: "#ffd65a", glow: "rgba(255,214,90,0.16)" },  // yellow
-  { stroke: "#b58bff", glow: "rgba(181,139,255,0.18)" }, // purple
+  { stroke: "#66f0d0", glow: "rgba(102,240,208,0.18)" },
+  { stroke: "#7fb4ff", glow: "rgba(127,180,255,0.16)" },
+  { stroke: "#ffd65a", glow: "rgba(255,214,90,0.16)" },
+  { stroke: "#b58bff", glow: "rgba(181,139,255,0.18)" },
 ];
 
 type DetailSection = {
@@ -20,10 +20,6 @@ type Props = {
   section: DetailSection;
 };
 
-/**
- * Numbered narrative panel for project.detailSections.
- * Alternates accent color per index. Uses CursorGlow for hover sheen.
- */
 export default function ProjectDetailSection({ index, section }: Props) {
   const accent = ACCENTS[index % ACCENTS.length];
   const num = String(index + 1).padStart(2, "0");
@@ -39,7 +35,7 @@ export default function ProjectDetailSection({ index, section }: Props) {
         boxShadow: `0 0 0 1px rgba(255,255,255,0.02), 0 30px 80px -50px ${accent.stroke}`,
       }}
     >
-<div className="grid gap-8 pt-6 md:grid-cols-[120px_1fr]">
+      <div className="grid gap-8 md:grid-cols-[120px_1fr]">
         <div>
           <span
             className="font-mono text-[11px] tracking-[0.3em]"
@@ -79,5 +75,3 @@ export default function ProjectDetailSection({ index, section }: Props) {
     </CursorGlow>
   );
 }
-
-

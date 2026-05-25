@@ -1,9 +1,16 @@
+import CursorGlow from "@/components/topsecret/shared/CursorGlow";
 import Link from "next/link";
 
 export default function FinalCTA() {
   return (
     <section className="relative px-6 pb-32 pt-16 sm:px-10 lg:px-16">
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0a0f17] via-[#080c12] to-[#06090e] p-10 sm:p-16 md:p-20">
+      <CursorGlow
+        as="div"
+        className="relative mx-auto max-w-7xl overflow-hidden rounded-[36px] border border-white/10 bg-gradient-to-br from-[#0a0f17] via-[#080c12] to-[#06090e] p-10 sm:p-16 md:p-20"
+        size={460}
+        color="rgba(102, 240, 208, 0.10)"
+        accent="rgba(127, 180, 255, 0.05)"
+      >
         {/* animated grid background */}
         <div
           aria-hidden
@@ -82,7 +89,7 @@ export default function FinalCTA() {
             </Link>
           </div>
         </div>
-      </div>
+      </CursorGlow>
     </section>
   );
 }
