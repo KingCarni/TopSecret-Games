@@ -229,65 +229,73 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "match-majesty",
-    name: "Match Majesty",
-    category: "Game",
+    slug: "master-draft-studios",
+    name: "Master Draft Studios",
+    category: "AI Product",
     status: "Next",
-    short: "Fantasy match-3 prototype with room for deeper progression systems.",
+    short: "AI-assisted writing studio for scripts, notes, pitch decks, and creative development.",
     summary:
-      "Match Majesty is a fantasy match-3 project with kingdom-building systems, and longer-tail gameplay depth.",
+      "Master Draft Studios is a creative writing workspace built for scriptwriters and storytellers who need more than a blank page. It combines script writing, notes, brainstorming, context memory, pitch deck creation, and AI-assisted image generation into one structured studio surface.",
     currentFocus:
-      "Core loop readability, progression planning, HUD and interface clarity, and creating a modular system with room to expand.",
+      "Core writing surface, project memory, multi-tool workflow, script export direction, and a cleaner creative operating system for moving from rough ideas to usable story materials.",
     whyItMatters:
-      "It shows the studio can carry systems thinking into playable game design and not just present game ideas as loose concepts or mood boards.",
+      "Creative work gets messy fast when scripts, notes, references, character ideas, and pitch materials live in separate places. Master Draft Studios is meant to keep creative context together and give writers a more supportive production surface.",
     tech: [
-      "Godot",
-      "GDScript",
-      "Gameplay systems",
-      "UI systems",
-      "Progression design",
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Prisma",
+      "Neon",
+      "Vercel",
       "Git",
       "VS Code",
       "Codex",
       "AI tools",
+      "Script writing",
+      "Notes",
+      "Brainstorming",
+      "Context memory",
+      "Pitch decks",
+      "Image generation",
+      "Export workflows",
     ],
     links: [
       { label: "Studio Overview", href: "/now-building" },
-      { label: "Gameplay Lane", href: "/projects", hideOnDetail: true },
+      { label: "Creative Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
       eyebrow: "Curated media slot",
-      title: "Match Majesty",
+      title: "Master Draft Studios",
       caption:
-        "Match Majesty is the early studio-facing surface for the match-3 concept, progression lane, and broader kingdom-building direction.",
+        "Master Draft Studios is the early studio-facing surface for the writing workspace, creative memory, pitch deck tooling, and broader script development direction.",
     },
     detailSections: [
       {
         label: "What it is",
-        title: "A match-3 project with real systems upside",
+        title: "A creative workspace for serious story development",
         body:
-          "Match Majesty is a polished match-3 foundation, but the real opportunity is in the surrounding systems: progression, world growth, interface clarity, and the ability to expand into something more layered than a simple puzzle prototype.",
+          "Master Draft Studios is an AI-assisted creative writing workspace for scriptwriters, storytellers, and creative teams. It brings script writing, note-taking, brainstorming, context memory, pitch deck creation, and image generation into one focused studio environment.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
-        title: "Core loop clarity first",
+        title: "Writing flow, memory, and export-ready structure",
         body:
-          "The current work is focused on making the gameplay read cleanly, tightening progression structure, and improving the modular system so the project feels like a credible systems-driven game.",
+          "The current focus is shaping the core writing surface, project memory, multi-tool workflow, and export direction so writers can move from rough ideas to usable creative materials without scattering work across disconnected apps.",
         accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
       {
         label: "Why it matters",
-        title: "Proof of game systems thinking",
+        title: "Keeping creative context together",
         body:
-          "This project proves the studio can do more than talk about game ideas. It is a working lane for systems design, gameplay iteration, presentation discipline, and future feature planning.",
+          "Scripts, notes, visual references, character ideas, and pitch materials can fragment fast. Master Draft Studios is designed to keep that creative context organized so the work can build instead of constantly restarting from scratch.",
         accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
       },
       {
         label: "Public access",
-        title: "User Test Play Opportunities",
+        title: "Studio-facing while the core workflow is shaped",
         body:
-          "Match Majesty is currently in the confidential TOP SECRET files. Playable demo TBA.",
+          "Master Draft Studios is being shaped as a dedicated creative product lane. A public product surface can come once the script writer, notes, memory, pitch deck, image generation, and export systems are strong enough to show.",
         accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
@@ -446,9 +454,9 @@ export const nowBuilding = [
     detail: "2.0 job search and apply, clearer fit signals, stronger trust cues, and a more useful candidate flow.",
   },
   {
-    title: "Match Majesty",
+    title: "Master Draft Studios",
     phase: "Next",
-    detail: "Core loop readability, progression planning, and interface clarity for a stronger systems-first prototype.",
+    detail: "Script writing, note-taking, brainstorming, context memory, pitch decks, image generation, and export workflow planning.",
   },
   {
     title: "NOVA",
