@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDownToLine, ArrowUpRight } from "lucide-react";
 import { PageShell, SectionLabel } from "@/components/topsecret/shared/PageShell";
 import { ExperienceItem, type Job } from "@/components/topsecret/resume/ExperienceItem";
+import CursorGlow from "@/components/topsecret/shared/CursorGlow";
 
 export const metadata = {
   title: "Resume — Harley Curtis",
@@ -158,9 +159,12 @@ export default function ResumePage() {
         {/* Proof snapshot */}
         <div className="mt-16 grid gap-px overflow-hidden rounded-[28px] border border-white/10 bg-white/5 md:grid-cols-2 xl:grid-cols-4">
           {proofSnapshot.map((p, i) => (
-            <div
+            <CursorGlow
               key={p.k}
               className="relative bg-[#06090d] p-6 md:p-8"
+              color="rgba(102,240,208,0.16)"
+              accent="rgba(127,180,255,0.10)"
+              size={360}
             >
               <span
                 className="font-mono text-[11px] tracking-[0.3em] text-[#66f0d0]"
@@ -171,7 +175,7 @@ export default function ResumePage() {
                 {p.k}
               </p>
               <p className="mt-3 text-base leading-7 text-white/85">{p.v}</p>
-            </div>
+            </CursorGlow>
           ))}
         </div>
       </section>

@@ -39,13 +39,7 @@ export default function ProjectDetailSection({ index, section }: Props) {
         boxShadow: `0 0 0 1px rgba(255,255,255,0.02), 0 30px 80px -50px ${accent.stroke}`,
       }}
     >
-      <div
-        aria-hidden
-        className="absolute left-8 top-8 h-1 w-20 rounded-full md:left-12"
-        style={{ background: `linear-gradient(90deg, ${accent.stroke}, transparent)` }}
-      />
-
-      <div className="grid gap-8 pt-6 md:grid-cols-[120px_1fr]">
+<div className="grid gap-8 pt-6 md:grid-cols-[120px_1fr]">
         <div>
           <span
             className="font-mono text-[11px] tracking-[0.3em]"
@@ -85,3 +79,5 @@ export default function ProjectDetailSection({ index, section }: Props) {
     </CursorGlow>
   );
 }
+
+
