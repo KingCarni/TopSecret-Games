@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { TitleScreen } from "./TitleScreen";
 import { GameScreen } from "./GameScreen";
 import { MapScreen } from "./MapScreen";
-import { TownScreen } from "./TownScreen";
+import { TownScreen, TownView } from "./TownScreen";
+import { RuneWordsGame } from "./RuneWordsGame";
+import { CapsuleClashGame } from "./CapsuleClashGame";
 import { SettingsModal } from "./SettingsModal";
 import { WinLoseModal } from "./WinLoseModal";
 import { LEVELS } from "@/lib/match-majesty/levels";
@@ -55,6 +57,7 @@ function saveProgress(p: Progress) {
 
 export function MatchMajestyApp() {
   const [screen, setScreen] = useState<Screen>("title");
+  const [townView, setTownView] = useState<TownView>("hub");
   const [showSettings, setShowSettings] = useState(false);
   const [progress, setProgress] = useState<Progress>(() => defaultProgress());
   const [activeLevel, setActiveLevel] = useState<Level>(LEVELS[0]);
@@ -99,7 +102,10 @@ export function MatchMajestyApp() {
     });
   }, [state.status, state.level]);
 
-  const goTo = (s: Screen) => setScreen(s);
+  const goTo = (s: Screen) => {
+    setScreen(s);
+    if (s !== "town") setTownView("hub");
+  };
   const handlePlay = () => {
     // Start at the next unfinished unlocked level
     const next =
@@ -163,7 +169,7 @@ export function MatchMajestyApp() {
             state={state}
             resources={progress.resources}
             onCellSelect={selectCell}
-            onNav={(s) => setScreen(s)}
+            onNav={(s) => goTo(s)}
             onRetry={handleRetry}
             onSettings={() => setShowSettings(true)}
           />
@@ -177,7 +183,18 @@ export function MatchMajestyApp() {
             onBack={() => setScreen("game")}
           />
         )}
-        {screen === "town" && <TownScreen onBack={() => setScreen("game")} />}
+        {screen === "town" && townView === "hub" && (
+          <TownScreen
+            onBack={() => goTo("game")}
+            onEnterMini={(v) => setTownView(v)}
+          />
+        )}
+        {screen === "town" && townView === "rune-words" && (
+          <RuneWordsGame onBack={() => setTownView("hub")} />
+        )}
+        {screen === "town" && townView === "capsule-clash" && (
+          <CapsuleClashGame onBack={() => setTownView("hub")} />
+        )}
 
         <SettingsModal
           open={showSettings}

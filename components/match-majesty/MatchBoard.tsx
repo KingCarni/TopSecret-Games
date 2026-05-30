@@ -192,6 +192,7 @@ export function MatchBoard({
                   type={gem.type}
                   size={Math.round(cellSize * 0.78)}
                   highlighted={selected?.r === r && selected?.c === c}
+                  power={gem.power}
                 />
               </div>
             </button>

@@ -2,8 +2,11 @@
 import { RegalButton } from "./UI";
 import { GemVisual } from "./GemVisual";
 
+export type TownView = "hub" | "rune-words" | "capsule-clash";
+
 interface TownScreenProps {
   onBack: () => void;
+  onEnterMini: (view: TownView) => void;
 }
 
 const HUB_CARDS = [
@@ -12,18 +15,20 @@ const HUB_CARDS = [
     title: "Rune Words",
     tag: "Mini-Game",
     body:
-      "Spell radiant words from drifting runestones. Coming with the next moon — bring your finest stardust.",
+      "Spell radiant words from drifting runestones. Race the candle — a 60-second sprint for word-smiths.",
     gem: "amethyst" as const,
     accent: "#A78BFA",
+    playable: true,
   },
   {
     key: "capsule-clash",
     title: "Capsule Clash",
     tag: "Mini-Game",
     body:
-      "Trade swift puzzles with the kingdom's traveling alchemists. Quick rounds, tactile rewards.",
+      "Match the marked capsule before the others. Speed-tap rounds for fast hands and faster wits.",
     gem: "topaz" as const,
     accent: "#F2D57E",
+    playable: true,
   },
   {
     key: "shop",
@@ -33,6 +38,7 @@ const HUB_CARDS = [
       "Convert hard-won resources into boosters, decor, and rare cosmetics for the throne.",
     gem: "ruby" as const,
     accent: "#F87171",
+    playable: false,
   },
   {
     key: "upgrades",
@@ -42,10 +48,11 @@ const HUB_CARDS = [
       "Reinforce the walls, plant the forest groves, and gild the rooftops. Permanent perks await.",
     gem: "emerald" as const,
     accent: "#34D399",
+    playable: false,
   },
 ];
 
-export function TownScreen({ onBack }: TownScreenProps) {
+export function TownScreen({ onBack, onEnterMini }: TownScreenProps) {
   return (
     <div className="relative w-full h-full overflow-hidden mm-town-bg">
       {/* Header */}
@@ -82,8 +89,13 @@ export function TownScreen({ onBack }: TownScreenProps) {
           card={HUB_CARDS[0]}
           className="col-span-5 row-span-3"
           featured
+          onClick={() => onEnterMini("rune-words")}
         />
-        <HubCard card={HUB_CARDS[1]} className="col-span-4 row-span-3" />
+        <HubCard
+          card={HUB_CARDS[1]}
+          className="col-span-4 row-span-3"
+          onClick={() => onEnterMini("capsule-clash")}
+        />
         <HubCard card={HUB_CARDS[2]} className="col-span-3 row-span-3" />
         <HubCard card={HUB_CARDS[3]} className="col-span-5 row-span-3" />
         {/* Mascot panel */}
@@ -121,21 +133,28 @@ function HubCard({
   card,
   className = "",
   featured = false,
+  onClick,
 }: {
   card: (typeof HUB_CARDS)[number];
   className?: string;
   featured?: boolean;
+  onClick?: () => void;
 }) {
+  const playable = card.playable;
   return (
     <button
       data-testid={`town-card-${card.key}`}
-      className={`group relative rounded-2xl overflow-hidden text-left transition-all duration-300 hover:-translate-y-1 ${className}`}
+      onClick={playable && onClick ? onClick : undefined}
+      className={`group relative rounded-2xl overflow-hidden text-left transition-all duration-300 hover:-translate-y-1 ${className} ${
+        !playable ? "opacity-90" : ""
+      }`}
       style={{
         background:
           "linear-gradient(180deg, rgba(244,231,206,0.96) 0%, rgba(216,191,154,0.96) 100%)",
         border: "5px solid #8C5E35",
         boxShadow:
           "inset 0 0 30px rgba(140,94,53,0.3), 0 10px 28px rgba(0,0,0,0.5)",
+        cursor: playable ? "pointer" : "default",
       }}
     >
       <div
@@ -171,8 +190,14 @@ function HubCard({
           {card.body}
         </p>
         <div className="mt-auto pt-4">
-          <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-bold text-[#5A4433] group-hover:text-[#2c1e16]">
-            Coming Soon →
+          <span
+            className={`inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] font-bold ${
+              playable
+                ? "text-[#2c1e16] group-hover:text-[#5A4433]"
+                : "text-[#5A4433]"
+            }`}
+          >
+            {playable ? "Play Now →" : "Coming Soon →"}
           </span>
         </div>
       </div>

@@ -110,6 +110,46 @@
     linear-gradient(180deg, #1a1133 0%, #0d1a14 70%, #04080a 100%);
 }
 
+.mm-rune-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(242, 213, 126, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, #1f1235 0%, #110c20 60%, #06030d 100%);
+}
+.mm-rune-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(242,213,126,0.45), transparent),
+    radial-gradient(1.5px 1.5px at 70% 18%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(168,85,247,0.5), transparent),
+    radial-gradient(1.5px 1.5px at 30% 80%, rgba(255,255,255,0.35), transparent);
+}
+
+.mm-capsule-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 80%, rgba(20, 184, 106, 0.22) 0%, transparent 55%),
+    linear-gradient(180deg, #1a1133 0%, #0e1922 60%, #04080a 100%);
+}
+
+.mm-shake-x {
+  animation: mm-shake-x 240ms ease-in-out;
+}
+@keyframes mm-shake-x {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
 /* ----- Title ----- */
 .mm-title {
   font-family: 'Cormorant Garamond', serif;
@@ -269,6 +309,26 @@
 @keyframes mm-selected-pulse {
   0%, 100% { box-shadow: 0 0 18px rgba(242,213,126,0.7), inset 0 0 18px rgba(242,213,126,0.35); }
   50% { box-shadow: 0 0 28px rgba(242,213,126,0.95), inset 0 0 22px rgba(242,213,126,0.5); }
+}
+
+/* Power-up gem visual: rotating amber aura ring */
+.mm-power-aura {
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg,
+      rgba(242,213,126,0.0) 0deg,
+      rgba(242,213,126,0.7) 60deg,
+      rgba(242,213,126,0.0) 120deg,
+      rgba(123,66,246,0.55) 200deg,
+      rgba(242,213,126,0.0) 260deg,
+      rgba(242,213,126,0.7) 320deg,
+      rgba(242,213,126,0.0) 360deg);
+  filter: blur(4px);
+  animation: mm-power-spin 4s linear infinite;
+  pointer-events: none;
+}
+@keyframes mm-power-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* Modal pop-in */

@@ -4,11 +4,10 @@ import {
   applyGravity,
   areAdjacent,
   BOARD_SIZE,
-  clearMatched,
-  findMatches,
+  expandPowerEffects,
   generateBoard,
-  hasAnyMatch,
   refillBoard,
+  resolveMatchWave,
   swapCells,
   swapProducesMatch,
 } from "./gameLogic";
@@ -80,82 +79,135 @@ export function useGame(initialLevel: Level) {
   stateRef.current = state;
 
   /** Resolve all cascading matches starting from a given board until stable. */
-  const resolveCascades = useCallback(async (startBoard: Board) => {
-    let board = startBoard;
-    let cascade = 0;
-    let totalScore = 0;
-    const collectedDelta: Record<GemType, number> = emptyCollected();
+  const resolveCascades = useCallback(
+    async (
+      startBoard: Board,
+      swapOrigin?: { r: number; c: number },
+      forceTrigger?: { r: number; c: number }[]
+    ) => {
+      let board = startBoard;
+      let cascade = 0;
+      let totalScore = 0;
+      const collectedDelta: Record<GemType, number> = emptyCollected();
+      let origin: { r: number; c: number } | undefined = swapOrigin;
 
-    // Loop: find matches -> clear -> gravity -> refill -> repeat
-    // eslint-disable-next-line no-constant-condition
-    while (true) {
-      const matches = findMatches(board);
-      if (!hasAnyMatch(matches)) break;
-      cascade += 1;
-      const { board: cleared, cleared: clearedList } = clearMatched(board, matches);
+      // FIRST: if the player swapped IN/OUT a power-up gem (no natural match
+      // forms but a power should fire), manually expand the power effects and
+      // clear once before entering the normal cascade loop.
+      if (forceTrigger && forceTrigger.length) {
+        const matched: boolean[][] = Array.from({ length: BOARD_SIZE }, () =>
+          Array(BOARD_SIZE).fill(false)
+        );
+        forceTrigger.forEach((p) => {
+          if (board[p.r]?.[p.c]) matched[p.r][p.c] = true;
+        });
+        const finalMatched = expandPowerEffects(board, matched);
+        const cleared: { type: GemType; r: number; c: number }[] = [];
+        const next: Board = board.map((row) => row.slice());
+        for (let r = 0; r < BOARD_SIZE; r++) {
+          for (let c = 0; c < BOARD_SIZE; c++) {
+            if (finalMatched[r][c] && next[r][c]) {
+              cleared.push({ type: next[r][c]!.type, r, c });
+              next[r][c] = null;
+            }
+          }
+        }
+        if (cleared.length) {
+          cascade += 1;
+          const events: MatchEvent[] = cleared.map((c) => ({
+            id: evtId(),
+            r: c.r,
+            c: c.c,
+            type: c.type,
+            cascade,
+          }));
+          totalScore += cleared.length * 15;
+          cleared.forEach((c) => (collectedDelta[c.type] += 1));
 
-      // Build flash events
-      const events: MatchEvent[] = clearedList.map((c) => ({
-        id: evtId(),
-        r: c.r,
-        c: c.c,
-        type: c.type,
-        cascade,
-      }));
+          setState((s) => ({
+            ...s,
+            board,
+            matchEvents: [...s.matchEvents.slice(-40), ...events],
+            cascadeLevel: cascade,
+          }));
+          await delay(POP_MS);
+          setState((s) => ({ ...s, board: next }));
+          await delay(120);
+          let after = applyGravity(next);
+          after = refillBoard(after);
+          board = after;
+          setState((s) => ({ ...s, board }));
+          await delay(FALL_MS);
+        }
+      }
 
-      // Score: 10 per gem, +5 bonus per extra gem in a single cluster (approx via cascade multiplier)
-      const baseScore = clearedList.length * 10;
-      const cascadeBonus = (cascade - 1) * clearedList.length * 5;
-      totalScore += baseScore + cascadeBonus;
+      // Loop: find matches -> clear (with power spawns) -> gravity -> refill -> repeat
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        const wave = resolveMatchWave(board, origin);
+        if (!wave) break;
+        cascade += 1;
+        origin = undefined; // only the first wave is anchored to the player's swap
 
-      // Update collected counters
-      clearedList.forEach((c) => {
-        collectedDelta[c.type] += 1;
+        const { board: nextBoard, cleared, spawns } = wave;
+
+        // Build flash events for the cleared cells (for sparkle layer)
+        const events: MatchEvent[] = cleared.map((c) => ({
+          id: evtId(),
+          r: c.r,
+          c: c.c,
+          type: c.type,
+          cascade,
+        }));
+
+        // Score: 10 per gem, +5 per gem per extra cascade level, +25 per power spawn
+        const baseScore = cleared.length * 10;
+        const cascadeBonus = (cascade - 1) * cleared.length * 5;
+        const powerBonus = spawns.length * 25;
+        totalScore += baseScore + cascadeBonus + powerBonus;
+
+        cleared.forEach((c) => {
+          collectedDelta[c.type] += 1;
+        });
+
+        setState((s) => ({
+          ...s,
+          board,
+          matchEvents: [...s.matchEvents.slice(-40), ...events],
+          cascadeLevel: cascade,
+        }));
+        await delay(POP_MS);
+
+        setState((s) => ({ ...s, board: nextBoard }));
+        await delay(120);
+
+        let boardAfter = applyGravity(nextBoard);
+        boardAfter = refillBoard(boardAfter);
+        board = boardAfter;
+        setState((s) => ({ ...s, board }));
+        await delay(FALL_MS);
+      }
+
+      setState((s) => {
+        const newCollected = { ...s.collected };
+        (Object.keys(collectedDelta) as GemType[]).forEach((t) => {
+          newCollected[t] = s.collected[t] + collectedDelta[t];
+        });
+        const won = isLevelComplete(s.level, newCollected);
+        const lost = !won && s.movesLeft <= 0;
+        return {
+          ...s,
+          board,
+          score: s.score + totalScore,
+          collected: newCollected,
+          cascadeLevel: 0,
+          isLocked: false,
+          status: won ? "won" : lost ? "lost" : s.status,
+        };
       });
-
-      // Show cleared (matched) state — gems still in their place but flashing
-      setState((s) => ({
-        ...s,
-        board, // pre-clear, gems still visible for pop animation
-        matchEvents: [...s.matchEvents.slice(-40), ...events],
-        cascadeLevel: cascade,
-      }));
-      await delay(POP_MS);
-
-      // Apply clear -> gravity -> refill
-      board = cleared;
-      board = applyGravity(board);
-      board = refillBoard(board);
-
-      // Commit the post-cascade board (gems fall in)
-      const commitBoard = board;
-      setState((s) => ({
-        ...s,
-        board: commitBoard,
-      }));
-      await delay(FALL_MS);
-    }
-
-    // Commit accumulated score + collected + check win
-    setState((s) => {
-      const newCollected = { ...s.collected };
-      (Object.keys(collectedDelta) as GemType[]).forEach((t) => {
-        // cap at required (display) — but keep extra in raw count for nicety
-        newCollected[t] = s.collected[t] + collectedDelta[t];
-      });
-      const won = isLevelComplete(s.level, newCollected);
-      const lost = !won && s.movesLeft <= 0;
-      return {
-        ...s,
-        board,
-        score: s.score + totalScore,
-        collected: newCollected,
-        cascadeLevel: 0,
-        isLocked: false,
-        status: won ? "won" : lost ? "lost" : s.status,
-      };
-    });
-  }, []);
+    },
+    []
+  );
 
   const trySwap = useCallback(
     async (a: { r: number; c: number }, b: { r: number; c: number }) => {
@@ -166,8 +218,21 @@ export function useGame(initialLevel: Level) {
       }
 
       const board = stateRef.current.board;
-      const isValid = swapProducesMatch(board, a, b);
+      // Power-up activation rule: swapping a power-up with ANY adjacent gem
+      // counts as a valid move and triggers the power-up effect directly.
+      const aGem = board[a.r]?.[a.c];
+      const bGem = board[b.r]?.[b.c];
+      const powerCells: { r: number; c: number }[] = [];
+      if (aGem?.power) powerCells.push(a);
+      if (bGem?.power) powerCells.push(b);
+      const naturalMatch = swapProducesMatch(board, a, b);
+      const involvesPower = powerCells.length > 0;
+      const isValid = involvesPower || naturalMatch;
       const swapped = swapCells(board, a, b);
+      // After swap, the power gem is at the OTHER position
+      const triggerAfter: { r: number; c: number }[] = [];
+      if (aGem?.power) triggerAfter.push(b);
+      if (bGem?.power) triggerAfter.push(a);
 
       // Show the visual swap immediately, with input locked
       setState((s) => ({
@@ -191,10 +256,10 @@ export function useGame(initialLevel: Level) {
         return;
       }
 
-      // Valid swap: consume a move, then resolve cascades
+      // Valid swap: consume a move, then resolve cascades anchored at target cell
       setState((s) => ({ ...s, movesLeft: Math.max(0, s.movesLeft - 1) }));
       await delay(180); // small breath after swap
-      await resolveCascades(swapped);
+      await resolveCascades(swapped, b, involvesPower ? triggerAfter : undefined);
     },
     [resolveCascades]
   );

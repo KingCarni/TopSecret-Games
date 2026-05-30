@@ -1,5 +1,5 @@
 "use client";
-import { GemType } from "@/lib/match-majesty/types";
+import { GemPower, GemType } from "@/lib/match-majesty/types";
 
 /**
  * Pure CSS+SVG gems. Each gem is visually distinct by both color AND shape
@@ -12,6 +12,8 @@ interface GemVisualProps {
   size?: number;
   /** When true: extra outer glow (used on hover/selected) */
   highlighted?: boolean;
+  /** Power-up overlay indicator (line/bomb/color) */
+  power?: GemPower;
 }
 
 const GEM_GLOW: Record<GemType, string> = {
@@ -23,7 +25,7 @@ const GEM_GLOW: Record<GemType, string> = {
   pearl: "0 0 18px rgba(255,255,255,0.55), 0 0 4px rgba(255,255,255,0.7) inset",
 };
 
-export function GemVisual({ type, size = 56, highlighted = false }: GemVisualProps) {
+export function GemVisual({ type, size = 56, highlighted = false, power }: GemVisualProps) {
   const glow = GEM_GLOW[type];
   const filter = highlighted ? "brightness(1.18) saturate(1.15)" : undefined;
   const wrap: React.CSSProperties = {
@@ -33,6 +35,19 @@ export function GemVisual({ type, size = 56, highlighted = false }: GemVisualPro
     filter,
   };
 
+  // Render the base gem first, then optionally overlay the power-up badge
+  const gemBody = renderGemBody(type, wrap, glow, size);
+  if (!power) return gemBody;
+  return (
+    <div style={{ position: "relative", width: size, height: size }}>
+      <div className="mm-power-aura" style={{ position: "absolute", inset: -2 }} />
+      {gemBody}
+      <PowerBadge power={power} size={size} />
+    </div>
+  );
+}
+
+function renderGemBody(type: GemType, wrap: React.CSSProperties, glow: string, size: number) {
   if (type === "ruby") {
     // Octagon: chamfered square via clip-path
     return (
@@ -211,4 +226,50 @@ export function GemVisual({ type, size = 56, highlighted = false }: GemVisualPro
 /** Tiny pip used in the objective panel to label gems by color/shape */
 export function GemPip({ type, size = 28 }: { type: GemType; size?: number }) {
   return <GemVisual type={type} size={size} />;
+}
+
+/** Visual overlay shown on power-up gems (line/bomb/color) */
+function PowerBadge({ power, size }: { power: GemPower; size: number }) {
+  const ringStyle: React.CSSProperties = {
+    position: "absolute",
+    inset: -3,
+    borderRadius: "50%",
+    border: "2px solid #F2D57E",
+    boxShadow:
+      "0 0 16px rgba(242,213,126,0.9), inset 0 0 8px rgba(255,255,255,0.4)",
+    pointerEvents: "none",
+    animation: "mm-power-spin 3.6s linear infinite",
+  };
+  const iconSize = Math.round(size * 0.28);
+  const iconStyle: React.CSSProperties = {
+    position: "absolute",
+    right: -2,
+    top: -2,
+    width: iconSize + 8,
+    height: iconSize + 8,
+    borderRadius: "50%",
+    background:
+      "radial-gradient(circle at 35% 30%, #fff7d6, #f2d57e 55%, #8c5e35 100%)",
+    border: "1.5px solid #4A3219",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    pointerEvents: "none",
+    boxShadow: "0 2px 6px rgba(0,0,0,0.6)",
+    fontSize: iconSize,
+    color: "#2c1e16",
+    fontWeight: 900,
+    fontFamily: "Alegreya Sans, sans-serif",
+    lineHeight: 1,
+  };
+  const label =
+    power === "line-h" ? "↔" : power === "line-v" ? "↕" : power === "bomb" ? "✸" : "★";
+  return (
+    <>
+      <div style={ringStyle} aria-hidden />
+      <div style={iconStyle} aria-hidden data-power={power}>
+        {label}
+      </div>
+    </>
+  );
 }
