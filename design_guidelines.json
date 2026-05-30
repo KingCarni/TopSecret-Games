@@ -1,0 +1,198 @@
+{
+  "theme_archetype": {
+    "domain": "Gaming - Premium Fantasy Puzzle",
+    "primary_archetype": "Archetype 5 (Luxury) mixed with Archetype 1 (Organic & Earthy)",
+    "vibe": "Twilight kingdom at the edge of an enchanted forest. High-end, mystical, regal, and deep.",
+    "theme": "Dark Theme (with high-contrast parchment light panels)"
+  },
+  "color_palette": {
+    "background": {
+      "twilight_deep": "#161026",
+      "forest_void": "#081F14",
+      "board_surface": "rgba(22, 16, 38, 0.7)"
+    },
+    "panels": {
+      "parchment_base": "#F4E7CE",
+      "parchment_dark": "#DBC19D",
+      "glass_dark": "rgba(20, 15, 30, 0.6)"
+    },
+    "accents": {
+      "amber_glow": "#F2D57E",
+      "bronze_trim": "#8C5E35",
+      "bronze_dark": "#4A3219",
+      "emerald_magic": "#14B86A",
+      "royal_purple": "#7B42F6"
+    },
+    "text": {
+      "on_dark": "#FCF8F2",
+      "on_dark_muted": "#BBAEC7",
+      "on_parchment": "#2C1E16",
+      "on_parchment_muted": "#5A4433"
+    },
+    "resources": {
+      "stardust": "#A78BFA",
+      "stone": "#9CA3AF",
+      "wood": "#B45309",
+      "cloth": "#38BDF8",
+      "gold": "#FBBF24"
+    }
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Alegreya+Sans:wght@300;400;500;700;800&display=swap",
+    "families": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'Alegreya Sans', sans-serif"
+    },
+    "usage": {
+      "h1_title": "font-heading font-bold text-5xl md:text-6xl tracking-tight text-amber_glow drop-shadow-[0_4px_12px_rgba(242,213,126,0.3)]",
+      "h2_panel": "font-heading font-semibold text-3xl md:text-4xl tracking-wide",
+      "h3_widget": "font-heading font-semibold text-xl md:text-2xl uppercase tracking-[0.1em]",
+      "body_text": "font-body text-base leading-relaxed",
+      "hud_numbers": "font-body font-extrabold text-2xl tabular-nums tracking-tight",
+      "button_text": "font-body font-bold text-lg uppercase tracking-[0.15em]"
+    }
+  },
+  "spacing_and_layout": {
+    "global": {
+      "container": "w-full h-full min-h-screen flex items-center justify-center bg-twilight_deep overflow-hidden touch-none select-none",
+      "game_window": "relative w-full max-w-[1280px] aspect-[16/10] md:max-h-[800px] bg-black shadow-2xl overflow-hidden"
+    },
+    "hud": {
+      "top_bar": "absolute top-0 left-0 w-full h-16 flex justify-between items-center px-6 z-20 bg-gradient-to-b from-black/80 to-transparent",
+      "bottom_nav": "absolute bottom-0 left-0 w-full h-20 flex justify-center items-center gap-4 px-6 z-20 bg-gradient-to-t from-black/90 via-black/60 to-transparent"
+    }
+  },
+  "ui_components": {
+    "buttons": {
+      "primary_regal": "relative group px-8 py-3 rounded-full bg-gradient-to-b from-amber_glow to-bronze_trim text-on_parchment border-2 border-amber_glow/50 shadow-[0_0_15px_rgba(242,213,126,0.2)] hover:shadow-[0_0_25px_rgba(242,213,126,0.5)] transition-all duration-300 hover:-translate-y-1 overflow-hidden",
+      "primary_regal_inner": "absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full",
+      "secondary_dark": "px-6 py-2 rounded-full bg-glass_dark backdrop-blur-md border border-bronze_trim/50 text-amber_glow hover:bg-bronze_trim/20 transition-all duration-300",
+      "nav_pill": "px-4 py-2 rounded-xl bg-black/50 border border-white/10 text-on_dark_muted hover:text-white hover:border-amber_glow/50 transition-colors"
+    },
+    "panels": {
+      "parchment_card": "relative rounded-lg bg-parchment_base text-on_parchment border-[6px] border-bronze_trim shadow-[inset_0_0_40px_rgba(140,94,53,0.3),0_10px_30px_rgba(0,0,0,0.5)] p-6 overflow-hidden",
+      "glass_hud_panel": "rounded-xl bg-black/40 backdrop-blur-lg border border-bronze_trim/40 shadow-[0_4px_16px_rgba(0,0,0,0.6)] p-4 text-on_dark"
+    },
+    "board": {
+      "container": "relative grid grid-cols-8 grid-rows-8 gap-1 p-2 bg-slate-950/70 backdrop-blur-md border-[4px] border-bronze_trim rounded-xl shadow-[0_0_40px_rgba(123,66,246,0.2),inset_0_0_20px_rgba(0,0,0,0.8)]",
+      "cell_bg": "w-full h-full rounded-md bg-white/5 border border-white/5 shadow-inner"
+    }
+  },
+  "gem_specs": {
+    "rules": "Pure CSS/SVG. No images. Must be visually distinct for color-blind accessibility.",
+    "gems": {
+      "ruby": {
+        "color": "Red",
+        "shape": "Octagon (Chamfered Square)",
+        "css": "bg-gradient-to-br from-red-400 via-red-600 to-rose-900 shadow-[inset_0_2px_4px_rgba(255,255,255,0.4),0_0_10px_rgba(220,38,38,0.5)] clip-path-polygon-[30%_0%,70%_0%,100%_30%,100%_70%,70%_100%,30%_100%,0%_70%,0%_30%]"
+      },
+      "sapphire": {
+        "color": "Blue",
+        "shape": "Sphere/Circle",
+        "css": "rounded-full bg-[radial-gradient(circle_at_30%_30%,_#60A5FA,_#1E3A8A,_#0F172A)] shadow-[inset_0_-4px_8px_rgba(0,0,0,0.5),0_0_12px_rgba(37,99,235,0.4)] border border-blue-400/30"
+      },
+      "emerald": {
+        "color": "Green",
+        "shape": "Hexagon",
+        "css": "bg-gradient-to-b from-emerald-300 via-green-600 to-green-900 shadow-[inset_0_0_8px_rgba(255,255,255,0.3),0_0_12px_rgba(16,185,129,0.4)] clip-path-polygon-[50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%]"
+      },
+      "topaz": {
+        "color": "Amber",
+        "shape": "Diamond",
+        "css": "rotate-45 bg-gradient-to-tr from-yellow-200 via-amber-500 to-amber-800 shadow-[inset_0_0_10px_rgba(255,255,255,0.5)] rounded-sm",
+        "wrapper_note": "Apply rotation to inner element, keep wrapper straight for grid"
+      },
+      "amethyst": {
+        "color": "Purple",
+        "shape": "Triangle",
+        "css": "bg-gradient-to-b from-fuchsia-400 to-purple-900 clip-path-polygon-[50%_0%,100%_100%,0%_100%] shadow-[0_4px_10px_rgba(147,51,234,0.5)]"
+      },
+      "pearl": {
+        "color": "Pale Cream",
+        "shape": "Tear Drop",
+        "css": "rounded-full rounded-tr-none rotate-45 bg-[radial-gradient(circle_at_40%_40%,_#FFFFFF,_#FDE047,_#D6D3D1)] shadow-[inset_0_-2px_6px_rgba(0,0,0,0.2),0_0_8px_rgba(255,255,255,0.6)]"
+      }
+    }
+  },
+  "motion_specs": {
+    "engine": "Framer Motion",
+    "animations": {
+      "swap": "{ layout: true, transition: { type: 'spring', stiffness: 300, damping: 25 } }",
+      "pop": "{ initial: { scale: 1, filter: 'brightness(1)' }, animate: { scale: 1.3, opacity: 0, filter: 'brightness(2)' }, transition: { duration: 0.2 } }",
+      "falling": "{ initial: { y: -50, opacity: 0 }, animate: { y: 0, opacity: 1 }, transition: { type: 'spring', bounce: 0.4 } }",
+      "cascade": "Stagger children with delay: 0.05",
+      "sparkle": "{ initial: { scale: 0, rotate: -45 }, animate: { scale: [0, 1.2, 0], rotate: 45 }, transition: { duration: 0.4, ease: 'easeInOut' } }"
+    }
+  },
+  "screen_blueprints": {
+    "title_screen": {
+      "layout": "Flex column center, stacked elements",
+      "background": "main_background image filling the game window",
+      "elements": [
+        "Massive Logo H1 with text shadow (Match Majesty)",
+        "Mascot placeholder image floating right side",
+        "Vertical stack of Primary Regal buttons: Play, Continue, Settings"
+      ]
+    },
+    "gameplay_screen": {
+      "layout": "Grid-based HUD over blurred background",
+      "background": "main_background with backdrop-blur-sm",
+      "top_bar": "Resource counters (Stardust, Stone, Wood, Cloth, Gold) in glass panels",
+      "center": "8x8 Board framed in bronze, centered",
+      "right_panel": "Objective glass panel. 4-6 target gems + current/required count. Progress bar at bottom.",
+      "bottom_nav": "Row of Secondary/Nav buttons: Board, Map, Town, Retry, Settings"
+    },
+    "map_screen": {
+      "layout": "Full width interactive map canvas",
+      "elements": [
+        "Curved path connecting Level Nodes",
+        "Unlocked Nodes: Glowing amber border",
+        "Locked Nodes: Grayscale, muted",
+        "Info Panel (Parchment Card) on node click with 'Start Level' button"
+      ]
+    },
+    "town_screen": {
+      "layout": "Bento grid mode A (Tetris Grid)",
+      "elements": [
+        "Parchment Cards representing: Rune Words, Capsule Clash, Shop, Upgrades",
+        "Use generous padding (p-6, p-8)",
+        "Include Mascot image in one of the bento cells"
+      ]
+    },
+    "settings_modal": {
+      "layout": "Absolute inset-0, flex center, bg-black/60 z-50",
+      "panel": "Parchment Card, w-[400px]",
+      "elements": [
+        "Settings H2 Title",
+        "Toggles for Sound, Music",
+        "Primary Regal button to Reset",
+        "Absolute top-right X button"
+      ]
+    }
+  },
+  "testing": {
+    "requirements": "All interactive elements (buttons, nodes, settings toggles) and key informational metrics (score, moves left, level goal, resources) MUST include a 'data-testid' attribute in kebab-case. Example: data-testid='play-button', data-testid='resource-gold-amount'."
+  },
+  "media_urls": {
+    "instructions_to_main_agent": "Use these exact URLs for the corresponding visual elements. Do not use generic placeholders.",
+    "backgrounds": {
+      "main_background": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/ab256871-38d3-4a69-a0f9-8d4c4b4c7ca3/images/2aa9f5f7de9cab18fb6298fa7b7f3d5789bbacc8fa982dad02f88f40d52d3b92.png",
+        "description": "Cinematic twilight kingdom at the edge of an enchanted forest. Use for Title, Gameplay, Map backgrounds.",
+        "usage": "Use as a full-bleed background object-cover inside the game container."
+      },
+      "parchment_texture": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/ab256871-38d3-4a69-a0f9-8d4c4b4c7ca3/images/8a92c215dedb945ed6c88822cd95979bc2203b9221b4034dfeeee324eea635a2.png",
+        "description": "Dark aged parchment paper texture.",
+        "usage": "Use as background image with mix-blend-multiply on parchment panels and modals."
+      }
+    },
+    "characters": {
+      "mascot_placeholder": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/ab256871-38d3-4a69-a0f9-8d4c4b4c7ca3/images/699dadc8181eca14f0ae906c0e65329a01e853826c86283522e62670753a8154.png",
+        "description": "Cute regal mystical owl/griffin on a parchment scroll.",
+        "usage": "Use on Title Screen and in the Town Hub bento grid."
+      }
+    }
+  }
+}
