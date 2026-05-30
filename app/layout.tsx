@@ -3,6 +3,9 @@ import { SiteFooter } from "@/components/topsecret/site-footer";
 import { SiteHeader } from "@/components/topsecret/site-header";
 import "./globals.css";
 
+const fontsHref =
+  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Alegreya+Sans:wght@300;400;500;700;800&display=swap";
+
 export const metadata: Metadata = {
   title: {
     default: "Top Secret Games",
@@ -72,6 +75,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={fontsHref} />
+      </head>
       <body className="bg-black text-white">
         <div className="min-h-screen">
           <SiteHeader />

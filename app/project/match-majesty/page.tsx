@@ -262,9 +262,16 @@ export default function MatchMajestyPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/match-majesty"
+                className="inline-flex items-center rounded-xl border border-yellow-400 bg-yellow-400 px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-black transition hover:scale-[1.02] hover:bg-yellow-300"
+                data-testid="play-prototype-link"
+              >
+                ▶ Play Prototype
+              </Link>
               <a
                 href="#pillars"
-                className="inline-flex items-center rounded-xl border border-yellow-400 bg-yellow-400 px-5 py-3 text-sm font-black uppercase tracking-[0.2em] text-black transition hover:scale-[1.02] hover:bg-yellow-300"
+                className="inline-flex items-center rounded-xl border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-white/20 hover:bg-white/[0.08]"
               >
                 View Pillars
               </a>
