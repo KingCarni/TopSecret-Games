@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Radio } from "lucide-react";
 import { PageShell, SectionLabel } from "@/components/topsecret/shared/PageShell";
+import { nowBuilding } from "@/lib/topsecret/site-data";
 import { LaneCard, type Lane } from "@/components/topsecret/now-building/LaneCard";
 
 export const metadata = {
@@ -9,92 +10,33 @@ export const metadata = {
     "A live lab status for what is active, what is next, and what is being shaped behind the scenes across the Top Secret Games project slate.",
 };
 
-const lanes: Lane[] = [
-  {
-    index: "L / 01",
-    name: "QAtalyst",
-    tagline: "QA intelligence engine",
-    phase: "Active",
-    accent: "#66f0d0",
-    href: "/projects/qatalyst",
-    focus: [
-      "QA triage surface that turns noisy bug intake into actionable lanes.",
-      "Ticket-to-test-case generation and clean ticket drafting flows.",
-      "Jira, TestRail, and Playwright workflow integrations.",
-      "Release confidence reporting designed for stakeholders, not just QA.",
-    ],
-  },
-  {
-    index: "L / 02",
-    name: "Git-a-Job",
-    tagline: "ATS-aware resume tooling",
-    phase: "Active",
-    accent: "#7fe8ff",
-    href: "/projects/git-a-job",
-    focus: [
-      "Git-a-Job 2.0 with sharper job search and apply experience.",
-      "Clearer fit signals between resume, posting, and ATS parsing.",
-      "Stronger trust cues across the candidate flow.",
-      "A more useful end-to-end pipeline for real job seekers.",
-    ],
-  },
-  {
-    index: "L / 03",
-    name: "Master Draft Studios",
-    tagline: "Studio + production layer",
-    phase: "Next",
-    accent: "#ffd65a",
-    href: "/projects/master-draft-studios",
-    focus: [
-      "Script writing, note-taking, and brainstorming as a connected surface.",
-      "Context memory across long-running creative work.",
-      "Pitch decks and image generation wired into the same workspace.",
-      "Export workflow planning from idea to deliverable.",
-    ],
-  },
-  {
-    index: "L / 04",
-    name: "Edu-Mates",
-    tagline: "Educational game platform",
-    phase: "Active",
-    accent: "#66f0d0",
-    href: "/projects/edu-mates",
-    focus: [
-      "Learning loop clarity for academic practice that feels game-first.",
-      "Teacher and parent value without losing student motivation.",
-      "Progression systems, rewards, and classroom usefulness.",
-      "Early product framing for the flagship education lane.",
-    ],
-  },
-  {
-    index: "L / 05",
-    name: "Greenlight",
-    tagline: "Creative decision system",
-    phase: "Next",
-    accent: "#9aff7f",
-    href: "/projects/greenlight",
-    focus: [
-      "Idea evaluation and concept scoring.",
-      "Project readiness checks before production momentum takes over.",
-      "Decision support for what deserves time, scope, and polish.",
-      "Lightweight production planning for the studio slate.",
-    ],
-  },
-  {
-    index: "L / 06",
-    name: ["Puck King", "H" + "ell"].join(" "),
-    tagline: "Arcade hockey game lane",
-    phase: "Shaping",
-    accent: "#ff9b66",
-    href: "/projects/puck-king-h" + "ell",
-    focus: [
-      "Core identity and gameplay hook.",
-      "Arcade hockey feel with attitude and progression.",
-      "Sports-comedy tone and production lane definition.",
-      "Game-first creative work alongside the AI product slate.",
-    ],
-  },
+const accents = ["#66f0d0", "#7fe8ff", "#ffd65a", "#66f0d0", "#9aff7f", "#ff9b66"];
+const slugs = [
+  "qatalyst",
+  "git-a-job",
+  "master-draft-studios",
+  "edu-mates",
+  "greenlight",
+  "puck-king-h" + "ell",
 ];
+const taglines = [
+  "QA intelligence engine",
+  "ATS-aware resume tooling",
+  "Studio + production layer",
+  "Educational game platform",
+  "Creative decision system",
+  "Arcade hockey game lane",
+];
+
+const lanes: Lane[] = nowBuilding.map((item, index) => ({
+  index: `L / ${String(index + 1).padStart(2, "0")}`,
+  name: item.title,
+  tagline: taglines[index],
+  phase: item.phase === "Later" ? "Shaping" : item.phase,
+  accent: accents[index],
+  href: `/projects/${slugs[index]}`,
+  focus: [item.detail],
+}));
 
 const philosophy = [
   {
@@ -133,7 +75,7 @@ const status = [
   { k: "Active", v: "3" },
   { k: "Next", v: "2" },
   { k: "Shaping", v: "1" },
-  { k: "Domains", v: "QA / AI / Education / Games" },
+  { k: "Domains", v: "QA / Career / Creative / Education / Games" },
 ];
 
 export default function NowBuildingPage() {
