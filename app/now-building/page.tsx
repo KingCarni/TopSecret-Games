@@ -32,7 +32,7 @@ const lanes: Lane[] = nowBuilding.map((item, index) => ({
   index: `L / ${String(index + 1).padStart(2, "0")}`,
   name: item.title,
   tagline: taglines[index],
-  phase: item.phase === "Later" ? "Shaping" : item.phase,
+  phase: (item.phase === "Later" ? "Shaping" : item.phase) as Lane["phase"],
   accent: accents[index],
   href: `/projects/${slugs[index]}`,
   focus: [item.detail],
