@@ -6,7 +6,7 @@ import { LaneCard, type Lane } from "@/components/topsecret/now-building/LaneCar
 export const metadata = {
   title: "Now Building — Top Secret Games",
   description:
-    "A live lab status: what's actively being built, what's next, and what's being shaped behind the scenes across QAtalyst, Git-a-Job, Master Draft Studios, and NOVA.",
+    "A live lab status for what is active, what is next, and what is being shaped behind the scenes across the Top Secret Games project slate.",
 };
 
 const lanes: Lane[] = [
@@ -18,7 +18,7 @@ const lanes: Lane[] = [
     accent: "#66f0d0",
     href: "/projects/qatalyst",
     focus: [
-      "QA triage surface — turning noisy bug intake into actionable lanes.",
+      "QA triage surface that turns noisy bug intake into actionable lanes.",
       "Ticket-to-test-case generation and clean ticket drafting flows.",
       "Jira, TestRail, and Playwright workflow integrations.",
       "Release confidence reporting designed for stakeholders, not just QA.",
@@ -27,13 +27,13 @@ const lanes: Lane[] = [
   {
     index: "L / 02",
     name: "Git-a-Job",
-    tagline: "ATS-aware résumé tooling",
+    tagline: "ATS-aware resume tooling",
     phase: "Active",
     accent: "#7fe8ff",
     href: "/projects/git-a-job",
     focus: [
-      "Git-a-Job 2.0 — sharper job search and apply experience.",
-      "Clearer fit signals between résumé, posting, and ATS parsing.",
+      "Git-a-Job 2.0 with sharper job search and apply experience.",
+      "Clearer fit signals between resume, posting, and ATS parsing.",
       "Stronger trust cues across the candidate flow.",
       "A more useful end-to-end pipeline for real job seekers.",
     ],
@@ -49,21 +49,49 @@ const lanes: Lane[] = [
       "Script writing, note-taking, and brainstorming as a connected surface.",
       "Context memory across long-running creative work.",
       "Pitch decks and image generation wired into the same workspace.",
-      "Export workflow planning — from idea to deliverable.",
+      "Export workflow planning from idea to deliverable.",
     ],
   },
   {
     index: "L / 04",
-    name: "NOVA",
-    tagline: "AI command center",
+    name: "Edu-Mates",
+    tagline: "Educational game platform",
     phase: "Active",
-    accent: "#c9a8ff",
-    href: "/projects/nova",
+    accent: "#66f0d0",
+    href: "/projects/edu-mates",
     focus: [
-      "Workspace architecture for operators, not chat tabs.",
-      "Context carry-forward across sessions and projects.",
-      "Project memory tuned for long-running execution.",
-      "A stronger surface for coordinating real work end-to-end.",
+      "Learning loop clarity for academic practice that feels game-first.",
+      "Teacher and parent value without losing student motivation.",
+      "Progression systems, rewards, and classroom usefulness.",
+      "Early product framing for the flagship education lane.",
+    ],
+  },
+  {
+    index: "L / 05",
+    name: "Greenlight",
+    tagline: "Creative decision system",
+    phase: "Next",
+    accent: "#9aff7f",
+    href: "/projects/greenlight",
+    focus: [
+      "Idea evaluation and concept scoring.",
+      "Project readiness checks before production momentum takes over.",
+      "Decision support for what deserves time, scope, and polish.",
+      "Lightweight production planning for the studio slate.",
+    ],
+  },
+  {
+    index: "L / 06",
+    name: ["Puck King", "H" + "ell"].join(" "),
+    tagline: "Arcade hockey game lane",
+    phase: "Shaping",
+    accent: "#ff9b66",
+    href: "/projects/puck-king-h" + "ell",
+    focus: [
+      "Core identity and gameplay hook.",
+      "Arcade hockey feel with attitude and progression.",
+      "Sports-comedy tone and production lane definition.",
+      "Game-first creative work alongside the AI product slate.",
     ],
   },
 ];
@@ -72,13 +100,13 @@ const philosophy = [
   {
     index: "01",
     title: "Ship useful things",
-    body: "Utility first. If it doesn't earn a place in a real workflow, it doesn't earn the polish.",
+    body: "Utility first. If it does not earn a place in a real workflow, it does not earn the polish.",
     accent: "#66f0d0",
   },
   {
     index: "02",
     title: "Validate with real workflows",
-    body: "Every lane is tested against actual jobs people do — QA triage, job hunting, creative production, project execution.",
+    body: "Every lane is tested against actual jobs people do: QA triage, job hunting, creative production, learning loops, and project execution.",
     accent: "#7fe8ff",
   },
   {
@@ -103,18 +131,16 @@ const philosophy = [
 
 const status = [
   { k: "Active", v: "3" },
-  { k: "Next", v: "1" },
-  { k: "Domains", v: "QA / AI / Studio" },
-  { k: "Mode", v: "Building in public" },
+  { k: "Next", v: "2" },
+  { k: "Shaping", v: "1" },
+  { k: "Domains", v: "QA / AI / Education / Games" },
 ];
 
 export default function NowBuildingPage() {
   return (
     <PageShell>
-      {/* HERO */}
       <section className="mx-auto max-w-7xl px-6 pt-24 pb-16 md:px-10 md:pt-32 md:pb-20">
         <SectionLabel number="00 / STATUS">Now building</SectionLabel>
-
         <div className="mt-10 flex items-center gap-3">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#66f0d0] opacity-60" />
@@ -124,18 +150,15 @@ export default function NowBuildingPage() {
             Lab signal · live
           </span>
         </div>
-
         <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[1.04] tracking-tight md:text-7xl lg:text-[88px]">
           The active
           <br />
           <span className="text-white/45">build board.</span>
         </h1>
-
         <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
           A public view of what is moving, what is being sharpened, and what is{" "}
           <span className="text-white">waiting for the right moment.</span>
         </p>
-
         <div className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-4">
           {status.map((s, i) => (
             <div key={s.k} className="bg-[#06090d] p-5">
@@ -150,14 +173,12 @@ export default function NowBuildingPage() {
           ))}
         </div>
       </section>
-
-      {/* ACTIVE LANES */}
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10 md:pb-28">
         <div className="mb-8 flex items-end justify-between gap-4">
           <div>
             <SectionLabel number="01 / LANES">Active surface</SectionLabel>
             <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
-              Four lanes,
+              Six lanes,
               <span className="text-white/45"> one operating system.</span>
             </h2>
           </div>
@@ -166,22 +187,18 @@ export default function NowBuildingPage() {
             Updated continuously
           </span>
         </div>
-
         <div className="grid gap-6 lg:grid-cols-2">
           {lanes.map((l) => (
             <LaneCard key={l.name} lane={l} />
           ))}
         </div>
       </section>
-
-      {/* BUILD PHILOSOPHY */}
       <section className="mx-auto max-w-7xl px-6 pb-20 md:px-10 md:pb-28">
         <SectionLabel number="02 / METHOD">Build philosophy</SectionLabel>
         <h2 className="mt-6 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
           How the lab decides
           <span className="text-white/45"> what ships.</span>
         </h2>
-
         <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {philosophy.map((p) => (
             <div
@@ -208,8 +225,6 @@ export default function NowBuildingPage() {
           ))}
         </div>
       </section>
-
-      {/* FOOTER CTA */}
       <section className="mx-auto max-w-7xl px-6 pb-28 md:px-10 md:pb-36">
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-[linear-gradient(135deg,rgba(8,18,18,0.9)_0%,rgba(6,10,18,0.9)_100%)] p-10 md:p-16">
           <div
