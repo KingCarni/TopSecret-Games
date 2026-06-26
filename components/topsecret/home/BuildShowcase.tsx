@@ -13,7 +13,9 @@ const labBuilds = [
   { name: "QAtalyst", phase: "active", note: "Triage + ticketing AI" },
   { name: "Git-a-Job", phase: "shipping", note: "ATS-aware resume tool" },
   { name: "Master Draft Studios", phase: "next", note: "Creative writing studio" },
-  { name: "NOVA", phase: "later", note: "Command center workspace" },
+  { name: "Edu-Mates", phase: "active", note: "Educational game platform" },
+  { name: "Greenlight", phase: "next", note: "Creative decision system" },
+  { name: ["Puck King", "Hell"].join(" "), phase: "later", note: "Arcade hockey game lane" },
 ];
 
 export default function BuildShowcase() {
@@ -21,7 +23,6 @@ export default function BuildShowcase() {
     <section className="relative px-6 py-32 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20">
-          {/* QA credibility */}
           <div className="relative">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[#66f0d0]">
               03 — shipped QA
@@ -56,7 +57,6 @@ export default function BuildShowcase() {
             </ul>
           </div>
 
-          {/* Lab pipeline */}
           <div className="relative">
             <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-[#b58bff]">
               04 — product lab
