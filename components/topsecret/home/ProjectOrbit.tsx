@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     slug: "qatalyst",
     name: "QAtalyst",
-    category: "AI · QA Workspace",
+    category: "QA · Systems",
     status: "Active",
     value:
       "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     slug: "git-a-job",
     name: "Git-a-Job",
-    category: "AI · Careers",
+    category: "Career · Tools",
     status: "Shipping",
     value:
       "ATS-aware resume and job application tool built for real job seekers, not recruiters.",
@@ -38,7 +38,7 @@ const projects: Project[] = [
   {
     slug: "master-draft-studios",
     name: "Master Draft Studios",
-    category: "AI · Creative",
+    category: "Creative · Studio",
     status: "Next",
     value:
       "AI-assisted writing studio for scripts, notes, pitch decks, and creative development.",
@@ -48,7 +48,7 @@ const projects: Project[] = [
   {
     slug: "edu-mates",
     name: "Edu-Mates",
-    category: "AI · Education",
+    category: "Games · Education",
     status: "Active",
     value:
       "Educational game/platform lane built to make academic practice feel more like an adventure than a worksheet.",
@@ -58,7 +58,7 @@ const projects: Project[] = [
   {
     slug: "greenlight",
     name: "Greenlight",
-    category: "AI · Creative Workflow",
+    category: "Creative · Studio",
     status: "Next",
     value:
       "Creative decision and production-readiness workspace for moving rough concepts toward approval and execution.",
