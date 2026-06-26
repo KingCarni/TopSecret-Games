@@ -31,7 +31,13 @@ export type ProjectDetailSection = {
 export type Project = {
   slug: string;
   name: string;
-  category: "AI Product" | "Game" | "System";
+  category:
+    | "QA System"
+    | "Career Tool"
+    | "Creative Studio"
+    | "Educational Game Platform"
+    | "Game"
+    | "System";
   status: ProjectStatus;
   short: string;
   summary: string;
@@ -84,13 +90,13 @@ export const homepageProof = [
 
 export const featuredProof = homepageProof;
 
-const commonAiTech = ["Next.js", "TypeScript", "Tailwind", "Vercel", "Git", "VS Code", "Codex", "AI tools"];
+const commonProductTech = ["Next.js", "TypeScript", "Tailwind", "Vercel", "Git", "VS Code", "Codex"];
 
 export const projects: Project[] = [
   {
     slug: "qatalyst",
     name: "QAtalyst",
-    category: "AI Product",
+    category: "QA System",
     status: "Active",
     short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
     summary:
@@ -99,7 +105,7 @@ export const projects: Project[] = [
       "QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
     whyItMatters:
       "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst speeds that up while keeping human QA judgment in control.",
-    tech: [...commonAiTech, "Jira", "TestRail", "Playwright", "QAt triage", "Ticket generation"],
+    tech: [...commonProductTech, "AI tools", "Jira", "TestRail", "Playwright", "QAt triage", "Ticket generation"],
     links: [
       { label: "Open QAtalystStudio.com", href: "https://qatalyststudio.com", external: true },
       { label: "Studio Overview", href: "/now-building" },
@@ -129,7 +135,7 @@ export const projects: Project[] = [
   {
     slug: "git-a-job",
     name: "Git-a-Job",
-    category: "AI Product",
+    category: "Career Tool",
     status: "Live",
     short: "ATS-aware resume and cover-letter tool built for real job seekers.",
     summary:
@@ -138,7 +144,7 @@ export const projects: Project[] = [
       "2.0 job search and apply - stronger search flow, clearer fit signals, more credible trust cues, and a more useful application surface for real candidates.",
     whyItMatters:
       "It is real shipped software with a live audience, real product constraints, and practical decisions around UX, pricing, parsing, and conversion.",
-    tech: [...commonAiTech, "Prisma", "Neon", "Stripe", "Resume parsing"],
+    tech: [...commonProductTech, "Prisma", "Neon", "Stripe", "Resume parsing"],
     links: [
       { label: "Open Live Site", href: "https://git-a-job.com", external: true },
       { label: "Resume Proof", href: "/resume" },
@@ -166,7 +172,7 @@ export const projects: Project[] = [
   {
     slug: "master-draft-studios",
     name: "Master Draft Studios",
-    category: "AI Product",
+    category: "Creative Studio",
     status: "Next",
     short: "AI-assisted writing studio for scripts, notes, pitch decks, and creative development.",
     summary:
@@ -175,7 +181,7 @@ export const projects: Project[] = [
       "Core writing surface, project memory, multi-tool workflow, script export direction, and a cleaner creative operating system.",
     whyItMatters:
       "Creative work gets messy fast when scripts, notes, references, character ideas, and pitch materials live in separate places.",
-    tech: [...commonAiTech, "Script writing", "Notes", "Brainstorming", "Pitch decks", "Image generation"],
+    tech: [...commonProductTech, "AI tools", "Script writing", "Notes", "Brainstorming", "Pitch decks", "Image generation"],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Creative Lane", href: "/projects", hideOnDetail: true },
@@ -203,7 +209,7 @@ export const projects: Project[] = [
   {
     slug: "edu-mates",
     name: "Edu-Mates",
-    category: "AI Product",
+    category: "Educational Game Platform",
     status: "Active",
     short: "Educational game/platform concept that makes academic practice feel more like an adventure than a worksheet.",
     summary:
@@ -212,13 +218,13 @@ export const projects: Project[] = [
       "Product shape, learning loop clarity, teacher and parent value, and early platform framing.",
     whyItMatters:
       "Edu-Mates is the flagship education lane: a serious attempt to turn academic practice into something students want to return to.",
-    tech: [...commonAiTech, "Educational systems", "Game design", "Progression design", "Classroom workflows"],
+    tech: ["Educational systems", "Game design", "Progression design", "Classroom workflows", "Teacher tools", "Student motivation"],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Education Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Education product lane",
+      eyebrow: "Education game lane",
       title: "Educational game platform",
       caption: "Edu-Mates is the flagship education lane for academic practice, progression, and classroom usefulness.",
     },
@@ -240,7 +246,7 @@ export const projects: Project[] = [
   {
     slug: "greenlight",
     name: "Greenlight",
-    category: "AI Product",
+    category: "Creative Studio",
     status: "Next",
     short: "Creative decision and production-readiness workspace for concept approval, planning, and execution.",
     summary:
@@ -249,13 +255,13 @@ export const projects: Project[] = [
       "Idea evaluation, concept scoring, project readiness, decision support, and lightweight production planning.",
     whyItMatters:
       "Greenlight gives the studio a way to decide what is worth building next instead of treating every idea like it has equal priority.",
-    tech: [...commonAiTech, "Project scoring", "Product planning", "Creative review", "Decision systems"],
+    tech: ["Project scoring", "Product planning", "Creative review", "Decision systems", "Production workflow", "Scope planning"],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Decision Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Creative workflow lane",
+      eyebrow: "Creative studio lane",
       title: "Creative decision system",
       caption: "Greenlight is being shaped as a cleaner way to evaluate, prioritize, and prepare ideas for production.",
     },
