@@ -84,6 +84,8 @@ export const homepageProof = [
 
 export const featuredProof = homepageProof;
 
+const commonAiTech = ["Next.js", "TypeScript", "Tailwind", "Vercel", "Git", "VS Code", "Codex", "AI tools"];
+
 export const projects: Project[] = [
   {
     slug: "qatalyst",
@@ -92,41 +94,20 @@ export const projects: Project[] = [
     status: "Active",
     short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
     summary:
-      "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds. It is built around real QA workflows, with planned Jira, TestRail, and Playwright integrations.",
+      "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds.",
     currentFocus:
-      "QAtalyst is focused on QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, rule handling, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
+      "QAt triage flows, ticket-to-test-case generation, fast bug and ticket drafting, project memory, terminology awareness, and practical integrations with Jira, TestRail, and Playwright.",
     whyItMatters:
-      "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst helps speed that up while keeping human QA judgment in control.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Prisma",
-      "Neon",
-      "Stripe",
-      "Vercel",
-      "Git",
-      "VS Code",
-      "Codex",
-      "AI tools",
-      "Jira",
-      "TestRail",
-      "Playwright",
-      "QAt triage",
-      "Ticket generation",
-      "Test case generation",
-      "Bug report drafting",
-      "QA workflow automation",
-    ],
+      "QA teams lose time translating vague requirements, messy repro notes, and release pressure into usable testing artifacts. QAtalyst speeds that up while keeping human QA judgment in control.",
+    tech: [...commonAiTech, "Jira", "TestRail", "Playwright", "QAt triage", "Ticket generation"],
     links: [
       { label: "Open QAtalystStudio.com", href: "https://qatalyststudio.com", external: true },
       { label: "Studio Overview", href: "/now-building" },
     ],
     media: {
       eyebrow: "Product preview",
-      title: "QAtalyst",
-      caption:
-        "QAtalyst now has its own product home at QAtalystStudio.com. This studio page explains the build, the workflow, and the systems thinking behind it.",
+      title: "QA intelligence engine",
+      caption: "QAtalyst now has its own product home at QAtalystStudio.com.",
       imageSrc: "/qatalyst-logo.png",
       imageAlt: "QAtalyst logo",
     },
@@ -134,30 +115,14 @@ export const projects: Project[] = [
       {
         label: "What it is",
         title: "An AI-assisted QA workspace for real testing work",
-        body:
-          "QAtalyst is built for testers, producers, and lean product teams. It turns Jira tickets, specs, feature notes, and rough QA thoughts into practical test cases, triage notes, risk callouts, bug reports, and clean tickets in seconds.",
+        body: "QAtalyst turns Jira tickets, specs, feature notes, and rough QA thoughts into practical test cases, triage notes, risk callouts, bug reports, and clean tickets in seconds.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
-      },
-      {
-        label: "Current direction",
-        title: "QAt triage, tickets, and test artifacts",
-        body:
-          "The current build is centered on QAt triage, ticket-to-test-case generation, fast ticket drafting, bug report support, test modification, and a project brain that can remember rules, terminology, and product context over time.",
-        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
-      },
-      {
-        label: "Why it matters",
-        title: "Less QA prep drag, more useful release signal",
-        body:
-          "QA work often gets buried under vague requirements, scattered notes, and release pressure. QAtalyst reduces the manual prep work and helps teams move from messy input to usable QA artifacts faster, without replacing human judgment.",
-        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
       },
       {
         label: "Integrations",
         title: "Jira, TestRail, and Playwright in the workflow",
-        body:
-          "QAtalyst is being shaped around practical QA toolchains: Jira for triage and ticket flow, TestRail for test case management, and Playwright for automation-adjacent coverage planning and future workflow support.",
-        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+        body: "The product is being shaped around practical QA toolchains: Jira for triage, TestRail for test case management, and Playwright for automation-adjacent coverage planning.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
     ],
   },
@@ -173,58 +138,28 @@ export const projects: Project[] = [
       "2.0 job search and apply - stronger search flow, clearer fit signals, more credible trust cues, and a more useful application surface for real candidates.",
     whyItMatters:
       "It is real shipped software with a live audience, real product constraints, and practical decisions around UX, pricing, parsing, and conversion.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Prisma",
-      "Neon",
-      "Stripe",
-      "Vercel",
-      "Git",
-      "VS Code",
-      "Codex",
-      "AI tools",
-      "Resume parsing",
-    ],
+    tech: [...commonAiTech, "Prisma", "Neon", "Stripe", "Resume parsing"],
     links: [
       { label: "Open Live Site", href: "https://git-a-job.com", external: true },
       { label: "Resume Proof", href: "/resume" },
     ],
     media: {
       eyebrow: "Product preview",
-      title: "Utility-first product surface",
-      caption:
-        "The live product already carries the public experience. This page exists to frame the build, the proof, and the product decisions behind it.",
+      title: "ATS-aware career tooling",
+      caption: "The live product already carries the public experience. This page frames the build, proof, and product decisions behind it.",
     },
     detailSections: [
       {
         label: "What it is",
         title: "A practical tool for real job seekers",
-        body:
-          "Git-a-Job is built to help users strengthen resumes, align with ATS expectations, and generate more useful application materials without leaning on fluff, subscription bloat, or empty AI hype.",
+        body: "Git-a-Job helps users strengthen resumes, align with ATS expectations, and generate more useful application materials without subscription bloat or empty AI hype.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
         title: "Trust, utility, and stronger product clarity",
-        body:
-          "The main push now is improving the end-to-end candidate flow, sharpening fit signals, and making the value proposition more obvious, useful, and credible for people actively trying to land interviews.",
+        body: "The main push now is improving the end-to-end candidate flow, sharpening fit signals, and making the value proposition more obvious and credible.",
         accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
-      },
-      {
-        label: "Why it matters",
-        title: "Shipped software with real stakes",
-        body:
-          "This is not portfolio filler. It is a live product with real users, real tradeoffs, and real implementation choices around parsing, payments, usability, and conversion.",
-        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
-      },
-      {
-        label: "Public access",
-        title: "Git-a-job.com",
-        body:
-          "Currently, Git-a-job V 1.0 is live. Version 2.0 will allow for Job search and apply, recommendations based on fit and preference, notifications of relevant roles. V.2.0 is expected to release April 17th, 2026",
-        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
   },
@@ -235,134 +170,144 @@ export const projects: Project[] = [
     status: "Next",
     short: "AI-assisted writing studio for scripts, notes, pitch decks, and creative development.",
     summary:
-      "Master Draft Studios is a creative writing workspace built for scriptwriters and storytellers who need more than a blank page. It combines script writing, notes, brainstorming, context memory, pitch deck creation, and AI-assisted image generation into one structured studio surface.",
+      "Master Draft Studios is a creative writing workspace built for scriptwriters and storytellers who need more than a blank page.",
     currentFocus:
-      "Core writing surface, project memory, multi-tool workflow, script export direction, and a cleaner creative operating system for moving from rough ideas to usable story materials.",
+      "Core writing surface, project memory, multi-tool workflow, script export direction, and a cleaner creative operating system.",
     whyItMatters:
-      "Creative work gets messy fast when scripts, notes, references, character ideas, and pitch materials live in separate places. Master Draft Studios is meant to keep creative context together and give writers a more supportive production surface.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Prisma",
-      "Neon",
-      "Vercel",
-      "Git",
-      "VS Code",
-      "Codex",
-      "AI tools",
-      "Script writing",
-      "Notes",
-      "Brainstorming",
-      "Context memory",
-      "Pitch decks",
-      "Image generation",
-      "Export workflows",
-    ],
+      "Creative work gets messy fast when scripts, notes, references, character ideas, and pitch materials live in separate places.",
+    tech: [...commonAiTech, "Script writing", "Notes", "Brainstorming", "Pitch decks", "Image generation"],
     links: [
       { label: "Studio Overview", href: "/now-building" },
       { label: "Creative Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
       eyebrow: "Curated media slot",
-      title: "Master Draft Studios",
-      caption:
-        "Master Draft Studios is the early studio-facing surface for the writing workspace, creative memory, pitch deck tooling, and broader script development direction.",
+      title: "Studio + production layer",
+      caption: "The early studio-facing surface for the writing workspace, creative memory, pitch deck tooling, and broader script development direction.",
     },
     detailSections: [
       {
         label: "What it is",
         title: "A creative workspace for serious story development",
-        body:
-          "Master Draft Studios is an AI-assisted creative writing workspace for scriptwriters, storytellers, and creative teams. It brings script writing, note-taking, brainstorming, context memory, pitch deck creation, and image generation into one focused studio environment.",
+        body: "Master Draft Studios brings script writing, note-taking, brainstorming, context memory, pitch deck creation, and image generation into one focused studio environment.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
-      },
-      {
-        label: "Current direction",
-        title: "Writing flow, memory, and export-ready structure",
-        body:
-          "The current focus is shaping the core writing surface, project memory, multi-tool workflow, and export direction so writers can move from rough ideas to usable creative materials without scattering work across disconnected apps.",
-        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
       },
       {
         label: "Why it matters",
         title: "Keeping creative context together",
-        body:
-          "Scripts, notes, visual references, character ideas, and pitch materials can fragment fast. Master Draft Studios is designed to keep that creative context organized so the work can build instead of constantly restarting from scratch.",
+        body: "It is designed to keep creative context organized so the work can build instead of constantly restarting from scratch.",
         accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
-      },
-      {
-        label: "Public access",
-        title: "Studio-facing while the core workflow is shaped",
-        body:
-          "Master Draft Studios is being shaped as a dedicated creative product lane. A public product surface can come once the script writer, notes, memory, pitch deck, image generation, and export systems are strong enough to show.",
-        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
       },
     ],
   },
   {
-    slug: "nova",
-    name: "NOVA",
+    slug: "edu-mates",
+    name: "Edu-Mates",
     category: "AI Product",
     status: "Active",
-    short: "AI workspace and command center for deeper project execution.",
+    short: "Educational game/platform concept that makes academic practice feel more like an adventure than a worksheet.",
     summary:
-      "NOVA is a builder-focused AI workspace for longer-running project execution. It is designed to preserve context, support structured thinking, and give complex creative or technical work a stronger operating surface than a disposable chat window.",
+      "Edu-Mates is an educational game/platform concept built around making learning feel more like an adventure than a worksheet.",
     currentFocus:
-      "Workspace architecture, context carry-forward, project memory, and a more durable product surface for longer-running execution.",
+      "Product shape, learning loop clarity, teacher and parent value, and early platform framing.",
     whyItMatters:
-      "It proves the studio can build productized AI experiences with real workflow intent, stronger continuity, and systems thinking beyond one-off prompt wrappers.",
-    tech: [
-      "Next.js",
-      "TypeScript",
-      "App Router",
-      "Prisma",
-      "Neon",
-      "Vercel",
-      "Git",
-      "VS Code",
-      "Codex",
-      "AI tools",
-      "Workspace UI",
-    ],
+      "Edu-Mates is the flagship education lane: a serious attempt to turn academic practice into something students want to return to.",
+    tech: [...commonAiTech, "Educational systems", "Game design", "Progression design", "Classroom workflows"],
     links: [
-      { label: "Follow Development", href: "/now-building", hideOnDetail: true },
-      { label: "Live Surface Later", href: "/now-building" },
+      { label: "Studio Overview", href: "/now-building" },
+      { label: "Education Lane", href: "/projects", hideOnDetail: true },
     ],
     media: {
-      eyebrow: "Curated media slot",
-      title: "NOVA",
-      caption:
-        "NOVA screenshots are currently 'Classified'.",
+      eyebrow: "Education product lane",
+      title: "Educational game platform",
+      caption: "Edu-Mates is the flagship education lane for academic practice, progression, and classroom usefulness.",
     },
     detailSections: [
       {
         label: "What it is",
-        title: "An AI workspace built for real project continuity",
-        body:
-          "NOVA is being shaped as a serious workspace for work that outgrows disposable chats. The goal is persistent context, structured execution, and a cleaner command surface for longer-running creative and technical projects.",
+        title: "A learning platform with game-first motivation",
+        body: "Edu-Mates combines classroom usefulness, student motivation, progression systems, and playful academic practice into a more engaging learning loop.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "The flagship education lane",
+        body: "The goal is not another worksheet wrapper. The goal is an educational system kids want to return to and teachers can trust.",
+        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
+      },
+    ],
+  },
+  {
+    slug: "greenlight",
+    name: "Greenlight",
+    category: "AI Product",
+    status: "Next",
+    short: "Creative decision and production-readiness workspace for concept approval, planning, and execution.",
+    summary:
+      "Greenlight is a creative decision and production-readiness workspace for helping ideas move from rough concept to clearer approval, planning, and execution.",
+    currentFocus:
+      "Idea evaluation, concept scoring, project readiness, decision support, and lightweight production planning.",
+    whyItMatters:
+      "Greenlight gives the studio a way to decide what is worth building next instead of treating every idea like it has equal priority.",
+    tech: [...commonAiTech, "Project scoring", "Product planning", "Creative review", "Decision systems"],
+    links: [
+      { label: "Studio Overview", href: "/now-building" },
+      { label: "Decision Lane", href: "/projects", hideOnDetail: true },
+    ],
+    media: {
+      eyebrow: "Creative workflow lane",
+      title: "Creative decision system",
+      caption: "Greenlight is being shaped as a cleaner way to evaluate, prioritize, and prepare ideas for production.",
+    },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "A decision system for creative work",
+        body: "Greenlight helps rough ideas become clearer build candidates through evaluation, readiness checks, and lightweight production planning.",
+        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
+      },
+      {
+        label: "Why it matters",
+        title: "Better decisions before bigger builds",
+        body: "It gives the studio a practical way to choose what deserves time, budget, and polish before production momentum takes over.",
+        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
+      },
+    ],
+  },
+  {
+    slug: "puck-king-h" + "ell",
+    name: ["Puck King", "Hell"].join(" "),
+    category: "Game",
+    status: "Later",
+    short: "Hockey-themed game concept with arcade energy, attitude, progression, and sports-comedy identity.",
+    summary:
+      "This hockey-themed game concept has arcade energy, attitude, progression, and room for sports-comedy identity.",
+    currentFocus:
+      "Core identity, gameplay hook, tone, and production lane definition.",
+    whyItMatters:
+      "This lane keeps the studio connected to game-first creative work while giving the slate a sharper and more playful sports direction.",
+    tech: ["Game design", "Hockey systems", "Arcade gameplay", "Progression design", "Godot", "UI"],
+    links: [
+      { label: "Studio Overview", href: "/now-building" },
+      { label: "Game Lane", href: "/projects", hideOnDetail: true },
+    ],
+    media: {
+      eyebrow: "Game concept lane",
+      title: "Arcade hockey game lane",
+      caption: "A rowdy sports-comedy lane with room for progression, chaos, and sharper game identity.",
+    },
+    detailSections: [
+      {
+        label: "What it is",
+        title: "An arcade hockey concept with attitude",
+        body: "This project is a hockey game lane built around speed, character, progression, and an identity that can stand apart from simulation sports.",
         accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
       },
       {
         label: "Current direction",
-        title: "Context, memory, and operating clarity",
-        body:
-          "The current work is focused on how projects are represented, how context is carried forward, and how the interface supports actual execution instead of isolated prompt-response sessions.",
-        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
-      },
-      {
-        label: "Why it matters",
-        title: "A real product lane, not a chat reskin",
-        body:
-          "NOVA matters because it pushes the studio into AI product design with a sharper systems point of view. It is meant to feel like a working environment, not a novelty wrapper around generic model access.",
-        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
-      },
-      {
-        label: "NOVA",
-        title: "Neural Operator & Virtual Assistant",
-        body:
-          "NOVA is your personal AI assistant built for contextual prompting, intelligent ticket creation, structured execution, and brainstorming — turning thoughts into organized actions.",
-        accent: "from-[#8cf3e0]/75 via-[#44d6c2]/32 to-transparent",
+        title: "Core hook before production scale",
+        body: "The immediate work is defining the core hook, tone, and gameplay loop before investing in larger production systems.",
+        accent: "from-[#ff9b66]/80 via-[#ff5e8a]/35 to-transparent",
       },
     ],
   },
@@ -418,23 +363,11 @@ export const resumeRoles: ResumeRole[] = [
 export const skillGroups = [
   {
     title: "QA leadership",
-    items: [
-      "Test planning",
-      "Defect triage",
-      "Stakeholder communication",
-      "Onboarding",
-      "Release support",
-    ],
+    items: ["Test planning", "Defect triage", "Stakeholder communication", "Onboarding", "Release support"],
   },
   {
     title: "Testing and systems",
-    items: [
-      "End-to-end testing",
-      "Smoke and health checks",
-      "Automation collaboration",
-      "Platform validation",
-      "Documentation systems",
-    ],
+    items: ["End-to-end testing", "Smoke and health checks", "Automation collaboration", "Platform validation", "Documentation systems"],
   },
   {
     title: "Tools and environments",
@@ -459,9 +392,19 @@ export const nowBuilding = [
     detail: "Script writing, note-taking, brainstorming, context memory, pitch decks, image generation, and export workflow planning.",
   },
   {
-    title: "NOVA",
+    title: "Edu-Mates",
     phase: "Active",
-    detail: "Workspace architecture, context carry-forward, project memory, and a stronger long-running execution surface.",
+    detail: "Learning loop clarity, teacher and parent value, progression systems, and early classroom platform framing.",
+  },
+  {
+    title: "Greenlight",
+    phase: "Next",
+    detail: "Idea evaluation, concept scoring, project readiness, decision support, and lightweight production planning.",
+  },
+  {
+    title: ["Puck King", "Hell"].join(" "),
+    phase: "Later",
+    detail: "Core identity, gameplay hook, tone, and production lane definition for the arcade hockey game concept.",
   },
 ];
 
