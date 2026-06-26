@@ -46,14 +46,34 @@ const projects: Project[] = [
     glyph: "M",
   },
   {
-    slug: "nova",
-    name: "NOVA",
-    category: "AI · Command Center",
+    slug: "edu-mates",
+    name: "Edu-Mates",
+    category: "AI · Education",
+    status: "Active",
+    value:
+      "Educational game/platform lane built to make academic practice feel more like an adventure than a worksheet.",
+    accent: "from-[#ffcf40] to-[#66f0d0]",
+    glyph: "E",
+  },
+  {
+    slug: "greenlight",
+    name: "Greenlight",
+    category: "AI · Creative Workflow",
+    status: "Next",
+    value:
+      "Creative decision and production-readiness workspace for moving rough concepts toward approval and execution.",
+    accent: "from-[#9aff7f] to-[#66f0d0]",
+    glyph: "L",
+  },
+  {
+    slug: "puck-king-hell",
+    name: "Puck King Hell",
+    category: "Game · Sports Comedy",
     status: "Later",
     value:
-      "AI workspace and command center for deeper project execution and orchestration.",
+      "Hockey-themed game concept with arcade energy, attitude, progression, chaos, and sports-comedy identity.",
     accent: "from-[#ff9b66] to-[#ff5e8a]",
-    glyph: "N",
+    glyph: "P",
   },
 ];
 
@@ -69,7 +89,7 @@ export default function ProjectOrbit() {
               02 — featured builds
             </p>
             <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Four products.
+              Six projects.
               <br />
               <span className="text-zinc-500">One studio.</span>
             </h2>
@@ -83,7 +103,7 @@ export default function ProjectOrbit() {
           </Link>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((p, i) => (
             <CursorGlow
               key={p.slug}
@@ -102,9 +122,8 @@ export default function ProjectOrbit() {
               <Link
                 href={`/projects/${p.slug}`}
                 onMouseEnter={() => setActive(i)}
-                className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0a0f17] to-[#06090e] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_30px_80px_-20px_rgba(102,240,208,0.25)]"
+                className="group relative block h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0a0f17] to-[#06090e] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-[0_30px_80px_-20px_rgba(102,240,208,0.25)]"
               >
-                {/* gradient wash */}
                 <div
                   className={`pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gradient-to-br ${p.accent} opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-30`}
                 />
