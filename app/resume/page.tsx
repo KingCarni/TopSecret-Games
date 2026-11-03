@@ -25,7 +25,7 @@ const proofSnapshot = [
   },
   {
     k: "Built product work",
-    v: "Git-a-Job and Top Secret Games — shipping, positioning, and execution beyond QA.",
+    v: "TestFLY, Hourkeepers, and GroSharey — shipping practical software beyond QA.",
   },
 ];
 
