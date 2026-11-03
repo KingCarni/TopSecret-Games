@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Radio } from "lucide-react";
 import { PageShell, SectionLabel } from "@/components/topsecret/shared/PageShell";
-import { nowBuilding } from "@/lib/topsecret/site-data";
+import { projects } from "@/lib/topsecret/site-data";
 import { LaneCard, type Lane } from "@/components/topsecret/now-building/LaneCard";
 
 export const metadata = {
@@ -11,31 +11,15 @@ export const metadata = {
 };
 
 const accents = ["#66f0d0", "#7fe8ff", "#ffd65a", "#66f0d0", "#9aff7f", "#ff9b66"];
-const slugs = [
-  "qatalyst",
-  "testfly",
-  "hourkeepers",
-  "edu-mates",
-  "grosharey",
-  "puck-king-h" + "ell",
-];
-const taglines = [
-  "QA intelligence engine",
-  "Test management and companion",
-  "Workforce management SaaS",
-  "Educational game platform",
-  "Shared grocery app",
-  "Arcade hockey game lane",
-];
-
-const lanes: Lane[] = nowBuilding.map((item, index) => ({
-  index: `L / ${String(index + 1).padStart(2, "0")}`,
-  name: item.title,
-  tagline: taglines[index],
-  phase: (item.phase === "Later" ? "Shaping" : item.phase) as Lane["phase"],
+const order = ["testfly", "hourkeepers", "qatalyst", "edu-mates", "grosharey", "puck-king-hell"];
+const lanes: Lane[] = [...projects].sort((a,b) => order.indexOf(a.slug) - order.indexOf(b.slug)).map((project,index) => ({
+  index: `L / ${String(index+1).padStart(2,"0")}`,
+  name: project.name,
+  tagline: project.media.title,
+  phase: (project.status === "Building" ? "Active" : project.status === "Later" ? "Shaping" : project.status) as Lane["phase"],
   accent: accents[index],
-  href: `/projects/${slugs[index]}`,
-  focus: [item.detail],
+  href: `/projects/${project.slug}`,
+  focus: [project.currentFocus],
 }));
 
 const philosophy = [
@@ -72,9 +56,9 @@ const philosophy = [
 ];
 
 const status = [
-  { k: "Active", v: "3" },
-  { k: "Next", v: "2" },
-  { k: "Shaping", v: "1" },
+  { k: "Active", v: "2" },
+  { k: "Building", v: "3" },
+  { k: "Live", v: "1" },
   { k: "Domains", v: "QA / SaaS / Mobile / Education / Games" },
 ];
 
@@ -129,7 +113,7 @@ export default function NowBuildingPage() {
             Updated continuously
           </span>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lanes.map((l) => (
             <LaneCard key={l.name} lane={l} />
           ))}
