@@ -4,7 +4,8 @@ export type ProjectStatus =
   | "Next"
   | "Later"
   | "In Progress"
-  | "Concept";
+  | "Concept"
+  | "Building";
 
 export type ProjectLink = {
   label: string;
@@ -164,7 +165,7 @@ export const projects: Project[] = [
     slug: "edu-mates",
     name: "Edu-Mates",
     category: "Educational Game Platform",
-    status: "Active",
+    status: "Building",
     short: "Educational game/platform concept that makes academic practice feel more like an adventure than a worksheet.",
     summary:
       "Edu-Mates is an educational game/platform concept built around making learning feel more like an adventure than a worksheet.",
@@ -201,7 +202,7 @@ export const projects: Project[] = [
     slug: "grosharey",
     name: "GroSharey",
     category: "System",
-    status: "Active",
+    status: "Building",
     short: "Shared grocery lists that keep household shopping organized together.",
     summary: "GroSharey is a mobile grocery-list app designed for households to coordinate shopping, share lists, and stay in sync.",
     currentFocus: "Shared lists, account access, household collaboration, notifications, and receipt workflows.",
@@ -215,7 +216,7 @@ export const projects: Project[] = [
     slug: "puck-king-h" + "ell",
     name: ["Puck King", "Hell"].join(" "),
     category: "Game",
-    status: "Later",
+    status: "Building",
     short: "Hockey-themed game concept with arcade energy, attitude, progression, and sports-comedy identity.",
     summary:
       "This hockey-themed game concept has arcade energy, attitude, progression, and room for sports-comedy identity.",
