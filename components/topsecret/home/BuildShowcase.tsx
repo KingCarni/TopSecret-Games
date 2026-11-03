@@ -10,12 +10,12 @@ const qaProof = [
 ];
 
 const labBuilds = [
-  { name: "TestFLY", phase: "shipping", note: "QA test management + desktop companion" },
-  { name: "Hourkeepers", phase: "active", note: "Timesheets, approvals + workforce reporting" },
-  { name: "QAtalyst", phase: "active", note: "AI-assisted QA triage + ticketing" },
-  { name: "Edu-Mates", phase: "building", note: "Educational game platform" },
-  { name: "GroSharey", phase: "building", note: "Shared grocery lists for households" },
-  { name: "Puck King Hell", phase: "building", note: "Arcade hockey game concept" },
+  { name: "TestFLY", phase: "live", note: "QA test management + desktop companion" },
+  { name: "Hourkeepers", phase: "live", note: "Timesheets, approvals + workforce reporting" },
+  { name: "QAtalyst", phase: "live", note: "AI-assisted QA triage + ticketing" },
+  { name: "Edu-Mates", phase: "in progress", note: "Educational game platform" },
+  { name: "GroSharey", phase: "final beta", note: "Shared grocery lists for households" },
+  { name: "Puck King Hell", phase: "in progress", note: "Arcade hockey game concept" },
 ];
 
 export default function BuildShowcase() {
@@ -85,7 +85,7 @@ export default function BuildShowcase() {
                 >
                   <div className="flex items-center gap-4">
                     <span className="relative flex h-2 w-2">
-                      {b.phase === "active" || b.phase === "shipping" ? (
+                      {b.phase === "live" || b.phase === "final beta" ? (
                         <>
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#66f0d0] opacity-60" />
                           <span className="relative inline-flex h-2 w-2 rounded-full bg-[#66f0d0]" />
