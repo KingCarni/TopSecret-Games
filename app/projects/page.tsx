@@ -16,6 +16,8 @@ const accents: ProjectCardData["accent"][] = ["emerald", "cyan", "amber", "viole
 
 function toCardStatus(status: string): ProjectCardData["status"] {
   if (status === "Live") return "Live";
+  if (status === "Final Beta") return "Final Beta";
+  if (status === "In Progress") return "In Progress";
   if (status === "Later" || status === "Concept") return "Concept";
   if (status === "Next") return "Internal";
   return "In Build";
@@ -41,8 +43,9 @@ const projects: ProjectCardData[] = orderedSlate.map((project, index) => {
 });
 
 const liveCount = projectSlate.filter((project) => project.status === "Live").length;
+const betaCount = projectSlate.filter(project => project.status === "Final Beta").length;
 const activeCount = projectSlate.filter(
-  (project) => project.status === "Active" || project.status === "In Progress"
+  (project) => project.status === "In Progress"
 ).length;
 const futureCount = projectSlate.filter(
   (project) => project.status === "Next" || project.status === "Later" || project.status === "Concept"
@@ -68,8 +71,8 @@ export default function ProjectsPage() {
         <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/5 sm:grid-cols-4">
           {[
             { k: "Live", v: String(liveCount) },
-            { k: "Active", v: String(activeCount) },
-            { k: "Future", v: String(futureCount) },
+            { k: "Final Beta", v: String(betaCount) },
+            { k: "In Progress", v: String(activeCount) },
             { k: "Domains", v: "Games / QA / SaaS / Mobile" },
           ].map((s) => (
             <div key={s.k} className="bg-[#06090d] p-5">
