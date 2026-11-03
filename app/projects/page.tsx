@@ -58,7 +58,7 @@ export default function ProjectsPage() {
           for shipping work.
         </h1>
         <p className="mt-8 max-w-2xl text-lg leading-8 text-white/65 md:text-xl">
-          Games, AI tooling, education systems, and quality workflows built under one studio.
+          Games, test management, workforce tools, mobile apps, and education systems built under one studio.
           Each one is a record of execution - not a pitch deck.
         </p>
 
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
             { k: "Live", v: String(liveCount) },
             { k: "Active", v: String(activeCount) },
             { k: "Future", v: String(futureCount) },
-            { k: "Domains", v: "Games / AI / QA / Education" },
+            { k: "Domains", v: "Games / QA / SaaS / Mobile" },
           ].map((s) => (
             <div key={s.k} className="bg-[#06090d] p-5">
               <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/50">
