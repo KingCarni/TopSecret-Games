@@ -13,18 +13,18 @@ export const metadata = {
 const accents = ["#66f0d0", "#7fe8ff", "#ffd65a", "#66f0d0", "#9aff7f", "#ff9b66"];
 const slugs = [
   "qatalyst",
-  "git-a-job",
-  "master-draft-studios",
+  "testfly",
+  "hourkeepers",
   "edu-mates",
-  "greenlight",
+  "grosharey",
   "puck-king-h" + "ell",
 ];
 const taglines = [
   "QA intelligence engine",
-  "ATS-aware resume tooling",
-  "Studio + production layer",
+  "Test management and companion",
+  "Workforce management SaaS",
   "Educational game platform",
-  "Creative decision system",
+  "Shared grocery app",
   "Arcade hockey game lane",
 ];
 
@@ -75,7 +75,7 @@ const status = [
   { k: "Active", v: "3" },
   { k: "Next", v: "2" },
   { k: "Shaping", v: "1" },
-  { k: "Domains", v: "QA / Career / Creative / Education / Games" },
+  { k: "Domains", v: "QA / SaaS / Mobile / Education / Games" },
 ];
 
 export default function NowBuildingPage() {
