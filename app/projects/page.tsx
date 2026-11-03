@@ -21,7 +21,10 @@ function toCardStatus(status: string): ProjectCardData["status"] {
   return "In Build";
 }
 
-const projects: ProjectCardData[] = projectSlate.map((project, index) => {
+const featuredOrder = ["testfly", "hourkeepers", "qatalyst", "edu-mates", "grosharey", "puck-king-hell"];
+const orderedSlate = [...projectSlate].sort((a, b) => featuredOrder.indexOf(a.slug) - featuredOrder.indexOf(b.slug));
+
+const projects: ProjectCardData[] = orderedSlate.map((project, index) => {
   const external = project.links.find((link) => link.external);
 
   return {
