@@ -16,7 +16,7 @@ const lanes: Lane[] = [...projects].sort((a,b) => order.indexOf(a.slug) - order.
   index: `L / ${String(index+1).padStart(2,"0")}`,
   name: project.name,
   tagline: project.media.title,
-  phase: (project.status === "Building" ? "Active" : project.status === "Later" ? "Shaping" : project.status) as Lane["phase"],
+  phase: project.status as Lane["phase"],
   accent: accents[index],
   href: `/projects/${project.slug}`,
   focus: [project.currentFocus],
@@ -56,9 +56,9 @@ const philosophy = [
 ];
 
 const status = [
-  { k: "Active", v: "2" },
-  { k: "Building", v: "3" },
-  { k: "Live", v: "1" },
+  { k: "Live", v: "3" },
+  { k: "Final Beta", v: "1" },
+  { k: "In Progress", v: "2" },
   { k: "Domains", v: "QA / SaaS / Mobile / Education / Games" },
 ];
 
