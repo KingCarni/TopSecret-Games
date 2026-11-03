@@ -15,9 +15,9 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { slug: "qatalyst", name: "QAtalyst", category: "QA · Systems", status: "Active", value: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.", accent: "from-[#66f0d0] to-[#3ce4c3]", glyph: "Q" },
   { slug: "testfly", name: "TestFLY", category: "QA · Test Management", status: "Shipping", value: "Test cases, test runs, reports, and a desktop companion overlay for fast QA execution.", accent: "from-[#7fb4ff] to-[#4f7cff]", glyph: "T" },
   { slug: "hourkeepers", name: "Hourkeepers", category: "SaaS · Workforce", status: "Active", value: "Timesheets, approvals, staffing insights, and project workforce reporting.", accent: "from-[#b58bff] to-[#7e5cff]", glyph: "H" },
+{ slug: "qatalyst", name: "QAtalyst", category: "QA · Systems", status: "Active", value: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.", accent: "from-[#66f0d0] to-[#3ce4c3]", glyph: "Q" },
   { slug: "edu-mates", name: "Edu-Mates", category: "Games · Education", status: "Active", value: "Educational game platform that makes academic practice feel more like an adventure.", accent: "from-[#ffcf40] to-[#66f0d0]", glyph: "E" },
   { slug: "grosharey", name: "GroSharey", category: "Mobile · Productivity", status: "Active", value: "Shared grocery lists for households to coordinate shopping together.", accent: "from-[#9aff7f] to-[#66f0d0]", glyph: "G" },
   { slug: "puck-king-hell", name: "Puck King Hell", category: "Game · Sports Comedy", status: "Later", value: "Arcade hockey concept with progression, chaos, and sports-comedy identity.", accent: "from-[#ff9b66] to-[#ff5e8a]", glyph: "P" },
