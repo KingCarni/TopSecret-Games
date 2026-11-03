@@ -111,7 +111,8 @@ const principles: Principle[] = [
 ];
 
 const laneAccents = ["#66f0d0", "#7fe8ff", "#ffd65a", "#c9a8ff", "#9aff7f", "#ff9b66"];
-const lanes = projects.map((project, index) => ({
+const order = ["testfly", "hourkeepers", "qatalyst", "edu-mates", "grosharey", "puck-king-hell"];
+const lanes = [...projects].sort((a,b) => order.indexOf(a.slug) - order.indexOf(b.slug)).map((project, index) => ({
   name: project.name,
   tag: project.media.title,
   accent: laneAccents[index % laneAccents.length],
@@ -185,7 +186,7 @@ export default function AboutPage() {
           Six product lanes, one operating system{" "}
           <span className="text-white/45">for shipping work.</span>
         </h2>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {lanes.map((l, i) => (
             <Link
               key={l.href}
