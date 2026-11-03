@@ -5,7 +5,8 @@ export type ProjectStatus =
   | "Later"
   | "In Progress"
   | "Concept"
-  | "Building";
+  | "Building"
+  | "Final Beta";
 
 export type ProjectLink = {
   label: string;
@@ -98,7 +99,7 @@ export const projects: Project[] = [
     slug: "qatalyst",
     name: "QAtalyst",
     category: "QA System",
-    status: "Active",
+    status: "Live",
     short: "AI-assisted QA workspace for triage, test cases, bug reports, and clean ticket generation.",
     summary:
       "QAtalyst is an AI-assisted QA workspace for turning tickets, specs, and product notes into practical QA output: test cases, QAt triage notes, risk callouts, bug reports, and well-written tickets in seconds.",
@@ -151,7 +152,7 @@ export const projects: Project[] = [
     slug: "hourkeepers",
     name: "Hourkeepers",
     category: "System",
-    status: "Active",
+    status: "Live",
     short: "Workforce timesheets, approvals, and staffing visibility in one SaaS workspace.",
     summary: "Hourkeepers is a workforce management platform for employees, managers, and administrators, with weekly timesheets, approval workflows, project assignments, staffing views, and reporting.",
     currentFocus: "Timesheet submission, manager approvals, project-scoped access, employee invitations, staffing targets, labor-cost reporting, and organization workflows.",
@@ -165,7 +166,7 @@ export const projects: Project[] = [
     slug: "edu-mates",
     name: "Edu-Mates",
     category: "Educational Game Platform",
-    status: "Building",
+    status: "In Progress",
     short: "Educational game/platform concept that makes academic practice feel more like an adventure than a worksheet.",
     summary:
       "Edu-Mates is an educational game/platform concept built around making learning feel more like an adventure than a worksheet.",
@@ -202,7 +203,7 @@ export const projects: Project[] = [
     slug: "grosharey",
     name: "GroSharey",
     category: "System",
-    status: "Building",
+    status: "Final Beta",
     short: "Shared grocery lists that keep household shopping organized together.",
     summary: "GroSharey is a mobile grocery-list app designed for households to coordinate shopping, share lists, and stay in sync.",
     currentFocus: "Shared lists, account access, household collaboration, notifications, and receipt workflows.",
@@ -216,7 +217,7 @@ export const projects: Project[] = [
     slug: "puck-king-h" + "ell",
     name: ["Puck King", "Hell"].join(" "),
     category: "Game",
-    status: "Building",
+    status: "In Progress",
     short: "Hockey-themed game concept with arcade energy, attitude, progression, and sports-comedy identity.",
     summary:
       "This hockey-themed game concept has arcade energy, attitude, progression, and room for sports-comedy identity.",
