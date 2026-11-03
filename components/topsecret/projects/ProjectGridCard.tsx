@@ -9,7 +9,7 @@ export type ProjectCardData = {
   title: string;
   tagline: string;
   description: string;
-  status: "Live" | "In Build" | "Internal" | "Concept";
+  status: "Live" | "Final Beta" | "In Progress" | "In Build" | "Internal" | "Concept";
   stack: string[];
   href: string;
   externalHref?: string;
