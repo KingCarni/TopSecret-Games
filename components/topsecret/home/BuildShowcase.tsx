@@ -10,12 +10,12 @@ const qaProof = [
 ];
 
 const labBuilds = [
-  { name: "QAtalyst", phase: "active", note: "Triage + ticketing AI" },
-  { name: "Git-a-Job", phase: "shipping", note: "ATS-aware resume tool" },
-  { name: "Master Draft Studios", phase: "next", note: "Creative writing studio" },
+  { name: "TestFLY", phase: "shipping", note: "QA test management + desktop companion" },
+  { name: "Hourkeepers", phase: "active", note: "Timesheets, approvals + workforce reporting" },
+  { name: "QAtalyst", phase: "active", note: "AI-assisted QA triage + ticketing" },
   { name: "Edu-Mates", phase: "active", note: "Educational game platform" },
-  { name: "Greenlight", phase: "next", note: "Creative decision system" },
-  { name: ["Puck King", "Hell"].join(" "), phase: "later", note: "Arcade hockey game lane" },
+  { name: "GroSharey", phase: "active", note: "Shared grocery lists for households" },
+  { name: "Puck King Hell", phase: "later", note: "Arcade hockey game concept" },
 ];
 
 export default function BuildShowcase() {
