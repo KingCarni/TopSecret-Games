@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-export type LaneStatus = "Active" | "Next" | "Shaping" | "Internal";
+export type LaneStatus = "Live" | "Final Beta" | "In Progress" | "Active" | "Next" | "Shaping" | "Internal";
 
 export type Lane = {
   index: string;
@@ -14,6 +14,9 @@ export type Lane = {
 };
 
 const phaseDot: Record<LaneStatus, string> = {
+  Live: "#66f0d0",
+  "Final Beta": "#7fe8ff",
+  "In Progress": "#ffd65a",
   Active: "#66f0d0",
   Next: "#c9a8ff",
   Shaping: "#ffd65a",
