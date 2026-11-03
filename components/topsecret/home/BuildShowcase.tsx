@@ -13,9 +13,9 @@ const labBuilds = [
   { name: "TestFLY", phase: "shipping", note: "QA test management + desktop companion" },
   { name: "Hourkeepers", phase: "active", note: "Timesheets, approvals + workforce reporting" },
   { name: "QAtalyst", phase: "active", note: "AI-assisted QA triage + ticketing" },
-  { name: "Edu-Mates", phase: "active", note: "Educational game platform" },
-  { name: "GroSharey", phase: "active", note: "Shared grocery lists for households" },
-  { name: "Puck King Hell", phase: "later", note: "Arcade hockey game concept" },
+  { name: "Edu-Mates", phase: "building", note: "Educational game platform" },
+  { name: "GroSharey", phase: "building", note: "Shared grocery lists for households" },
+  { name: "Puck King Hell", phase: "building", note: "Arcade hockey game concept" },
 ];
 
 export default function BuildShowcase() {
