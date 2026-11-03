@@ -84,7 +84,7 @@ export const homepageProof = [
   },
   {
     title: "Built product work",
-    body: "Git-a-Job and Top Secret Games show product thinking beyond QA into shipping, positioning, and execution.",
+    body: "TestFLY, Hourkeepers, and GroSharey show product thinking beyond QA into shipping, positioning, and execution.",
   },
 ];
 
@@ -133,78 +133,32 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "git-a-job",
-    name: "Git-a-Job",
-    category: "Career Tool",
+    slug: "testfly",
+    name: "TestFLY",
+    category: "QA System",
     status: "Live",
-    short: "ATS-aware resume and cover-letter tool built for real job seekers.",
-    summary:
-      "Git-a-Job is a practical hiring utility built to help real job seekers improve resumes, align with ATS constraints, and create stronger application materials without bloated pricing, vague promises, or fake magic.",
-    currentFocus:
-      "2.0 job search and apply - stronger search flow, clearer fit signals, more credible trust cues, and a more useful application surface for real candidates.",
-    whyItMatters:
-      "It is real shipped software with a live audience, real product constraints, and practical decisions around UX, pricing, parsing, and conversion.",
-    tech: [...commonProductTech, "Prisma", "Neon", "Stripe", "Resume parsing"],
-    links: [
-      { label: "Open Live Site", href: "https://git-a-job.com", external: true },
-      { label: "Resume Proof", href: "/resume" },
-    ],
-    media: {
-      eyebrow: "Product preview",
-      title: "ATS-aware career tooling",
-      caption: "The live product already carries the public experience. This page frames the build, proof, and product decisions behind it.",
-    },
-    detailSections: [
-      {
-        label: "What it is",
-        title: "A practical tool for real job seekers",
-        body: "Git-a-Job helps users strengthen resumes, align with ATS expectations, and generate more useful application materials without subscription bloat or empty AI hype.",
-        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
-      },
-      {
-        label: "Current direction",
-        title: "Trust, utility, and stronger product clarity",
-        body: "The main push now is improving the end-to-end candidate flow, sharpening fit signals, and making the value proposition more obvious and credible.",
-        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
-      },
-    ],
+    short: "Test management platform for organized cases, test runs, reporting, and fast execution.",
+    summary: "TestFLY is a QA test management platform for organizing test cases, creating and assigning runs, tracking execution, and reviewing results. Its desktop companion supports quick testing workflows with global hotkeys.",
+    currentFocus: "CSV test case imports, section organization, test runs and assignments, reporting, workspace access, and the TestFLY Companion overlay.",
+    whyItMatters: "Large QA teams need a practical way to manage thousands of test cases without losing execution speed or visibility.",
+    tech: ["Next.js","TypeScript","Supabase","Electron","Stripe","Test management"],
+    links: [{ label: "Visit TestFLY", href: "https://www.testfly.ca", external: true }, { label: "Now Building", href: "/now-building" }],
+    media: { eyebrow: "Product overview", title: "Test management and companion overlay", caption: "Organized test cases, execution queues, and a desktop companion built around everyday QA work." },
+    detailSections: [{ label: "What it is", title: "Test management and companion overlay", body: "TestFLY is a QA test management platform for organizing test cases, creating and assigning runs, tracking execution, and reviewing results. Its desktop companion supports quick testing workflows with global hotkeys.", accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent" }, { label: "Current focus", title: "Building practical workflows", body: "CSV test case imports, section organization, test runs and assignments, reporting, workspace access, and the TestFLY Companion overlay.", accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent" }],
   },
   {
-    slug: "master-draft-studios",
-    name: "Master Draft Studios",
-    category: "Creative Studio",
-    status: "Next",
-    short: "AI-assisted writing studio for scripts, notes, pitch decks, and creative development.",
-    summary:
-      "Master Draft Studios is a creative writing workspace built for scriptwriters and storytellers who need more than a blank page.",
-    currentFocus:
-      "Core writing surface, project memory, multi-tool workflow, script export direction, and a cleaner creative operating system.",
-    whyItMatters:
-      "Creative work gets messy fast when scripts, notes, references, character ideas, and pitch materials live in separate places.",
-    tech: [...commonProductTech, "AI tools", "Script writing", "Notes", "Brainstorming", "Pitch decks", "Image generation"],
-    links: [
-      { label: "Studio Overview", href: "/now-building" },
-      { label: "Creative Lane", href: "/projects", hideOnDetail: true },
-    ],
-    media: {
-      eyebrow: "Curated media slot",
-      title: "Studio + production layer",
-      caption: "The early studio-facing surface for the writing workspace, creative memory, pitch deck tooling, and broader script development direction.",
-    },
-    detailSections: [
-      {
-        label: "What it is",
-        title: "A creative workspace for serious story development",
-        body: "Master Draft Studios brings script writing, note-taking, brainstorming, context memory, pitch deck creation, and image generation into one focused studio environment.",
-        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
-      },
-      {
-        label: "Why it matters",
-        title: "Keeping creative context together",
-        body: "It is designed to keep creative context organized so the work can build instead of constantly restarting from scratch.",
-        accent: "from-[#ffd65a]/80 via-[#ffcf40]/28 to-transparent",
-      },
-    ],
+    slug: "hourkeepers",
+    name: "Hourkeepers",
+    category: "System",
+    status: "Active",
+    short: "Workforce timesheets, approvals, and staffing visibility in one SaaS workspace.",
+    summary: "Hourkeepers is a workforce management platform for employees, managers, and administrators, with weekly timesheets, approval workflows, project assignments, staffing views, and reporting.",
+    currentFocus: "Timesheet submission, manager approvals, project-scoped access, employee invitations, staffing targets, labor-cost reporting, and organization workflows.",
+    whyItMatters: "Teams need reliable hours and approvals without fragmented spreadsheets or opaque staffing information.",
+    tech: ["Next.js","TypeScript","Prisma","PostgreSQL","Vercel","Timesheets"],
+    links: [{ label: "Visit Hourkeepers", href: "https://hourkeepers.ca", external: true }, { label: "Now Building", href: "/now-building" }],
+    media: { eyebrow: "Product overview", title: "Workforce hours and approvals", caption: "Timesheets, manager review, project staffing, and practical workforce reporting." },
+    detailSections: [{ label: "What it is", title: "Workforce hours and approvals", body: "Hourkeepers is a workforce management platform for employees, managers, and administrators, with weekly timesheets, approval workflows, project assignments, staffing views, and reporting.", accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent" }, { label: "Current focus", title: "Building practical workflows", body: "Timesheet submission, manager approvals, project-scoped access, employee invitations, staffing targets, labor-cost reporting, and organization workflows.", accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent" }],
   },
   {
     slug: "edu-mates",
@@ -244,41 +198,18 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "greenlight",
-    name: "Greenlight",
-    category: "Creative Studio",
-    status: "Next",
-    short: "Creative decision and production-readiness workspace for concept approval, planning, and execution.",
-    summary:
-      "Greenlight is a creative decision and production-readiness workspace for helping ideas move from rough concept to clearer approval, planning, and execution.",
-    currentFocus:
-      "Idea evaluation, concept scoring, project readiness, decision support, and lightweight production planning.",
-    whyItMatters:
-      "Greenlight gives the studio a way to decide what is worth building next instead of treating every idea like it has equal priority.",
-    tech: ["Project scoring", "Product planning", "Creative review", "Decision systems", "Production workflow", "Scope planning"],
-    links: [
-      { label: "Studio Overview", href: "/now-building" },
-      { label: "Decision Lane", href: "/projects", hideOnDetail: true },
-    ],
-    media: {
-      eyebrow: "Creative studio lane",
-      title: "Creative decision system",
-      caption: "Greenlight is being shaped as a cleaner way to evaluate, prioritize, and prepare ideas for production.",
-    },
-    detailSections: [
-      {
-        label: "What it is",
-        title: "A decision system for creative work",
-        body: "Greenlight helps rough ideas become clearer build candidates through evaluation, readiness checks, and lightweight production planning.",
-        accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent",
-      },
-      {
-        label: "Why it matters",
-        title: "Better decisions before bigger builds",
-        body: "It gives the studio a practical way to choose what deserves time, budget, and polish before production momentum takes over.",
-        accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent",
-      },
-    ],
+    slug: "grosharey",
+    name: "GroSharey",
+    category: "System",
+    status: "Active",
+    short: "Shared grocery lists that keep household shopping organized together.",
+    summary: "GroSharey is a mobile grocery-list app designed for households to coordinate shopping, share lists, and stay in sync.",
+    currentFocus: "Shared lists, account access, household collaboration, notifications, and receipt workflows.",
+    whyItMatters: "Household shopping is easier when everyone can work from the same up-to-date list.",
+    tech: ["Expo","React Native","Supabase","Mobile","Shared lists"],
+    links: [{ label: "Now Building", href: "/now-building" }],
+    media: { eyebrow: "Product overview", title: "Shared grocery shopping", caption: "A mobile-first shared grocery list for coordinating everyday shopping." },
+    detailSections: [{ label: "What it is", title: "Shared grocery shopping", body: "GroSharey is a mobile grocery-list app designed for households to coordinate shopping, share lists, and stay in sync.", accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent" }, { label: "Current focus", title: "Building practical workflows", body: "Shared lists, account access, household collaboration, notifications, and receipt workflows.", accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent" }],
   },
   {
     slug: "puck-king-h" + "ell",
@@ -381,38 +312,7 @@ export const skillGroups = [
   },
 ];
 
-export const nowBuilding = [
-  {
-    title: "QAtalyst",
-    phase: "Active",
-    detail: "QAt triage, ticket-to-test-case generation, clean ticket drafting, Jira, TestRail, and Playwright workflow integrations.",
-  },
-  {
-    title: "Git-a-Job",
-    phase: "Active",
-    detail: "2.0 job search and apply, clearer fit signals, stronger trust cues, and a more useful candidate flow.",
-  },
-  {
-    title: "Master Draft Studios",
-    phase: "Next",
-    detail: "Script writing, note-taking, brainstorming, context memory, pitch decks, image generation, and export workflow planning.",
-  },
-  {
-    title: "Edu-Mates",
-    phase: "Active",
-    detail: "Learning loop clarity, teacher and parent value, progression systems, and early classroom platform framing.",
-  },
-  {
-    title: "Greenlight",
-    phase: "Next",
-    detail: "Idea evaluation, concept scoring, project readiness, decision support, and lightweight production planning.",
-  },
-  {
-    title: ["Puck King", "Hell"].join(" "),
-    phase: "Later",
-    detail: "Core identity, gameplay hook, tone, and production lane definition for the arcade hockey game concept.",
-  },
-];
+export const nowBuilding = projects.map((project) => ({ title: project.name, phase: project.status, detail: project.currentFocus }));
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
