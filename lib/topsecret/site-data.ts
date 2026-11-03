@@ -143,7 +143,7 @@ export const projects: Project[] = [
     whyItMatters: "Large QA teams need a practical way to manage thousands of test cases without losing execution speed or visibility.",
     tech: ["Next.js","TypeScript","Supabase","Electron","Stripe","Test management"],
     links: [{ label: "Visit TestFLY", href: "https://www.testfly.ca", external: true }, { label: "Now Building", href: "/now-building" }],
-    media: { eyebrow: "Product overview", title: "Test management and companion overlay", caption: "Organized test cases, execution queues, and a desktop companion built around everyday QA work." },
+    media: { eyebrow: "Product overview", title: "Test management and companion overlay", imageSrc: "/projects/testfly.jpg", imageAlt: "TestFLY test management product interface", caption: "Organized test cases, execution queues, and a desktop companion built around everyday QA work." },
     detailSections: [{ label: "What it is", title: "Test management and companion overlay", body: "TestFLY is a QA test management platform for organizing test cases, creating and assigning runs, tracking execution, and reviewing results. Its desktop companion supports quick testing workflows with global hotkeys.", accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent" }, { label: "Current focus", title: "Building practical workflows", body: "CSV test case imports, section organization, test runs and assignments, reporting, workspace access, and the TestFLY Companion overlay.", accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent" }],
   },
   {
@@ -156,8 +156,8 @@ export const projects: Project[] = [
     currentFocus: "Timesheet submission, manager approvals, project-scoped access, employee invitations, staffing targets, labor-cost reporting, and organization workflows.",
     whyItMatters: "Teams need reliable hours and approvals without fragmented spreadsheets or opaque staffing information.",
     tech: ["Next.js","TypeScript","Prisma","PostgreSQL","Vercel","Timesheets"],
-    links: [{ label: "Visit Hourkeepers", href: "https://hourkeepers.ca", external: true }, { label: "Now Building", href: "/now-building" }],
-    media: { eyebrow: "Product overview", title: "Workforce hours and approvals", caption: "Timesheets, manager review, project staffing, and practical workforce reporting." },
+    links: [{ label: "Visit Hourkeepers", href: "https://hourkeepers.com", external: true }, { label: "Now Building", href: "/now-building" }],
+    media: { eyebrow: "Product overview", title: "Workforce hours and approvals", imageSrc: "/projects/hourkeepers.jpg", imageAlt: "Hourkeepers timesheets and approvals product interface", caption: "Timesheets, manager review, project staffing, and practical workforce reporting." },
     detailSections: [{ label: "What it is", title: "Workforce hours and approvals", body: "Hourkeepers is a workforce management platform for employees, managers, and administrators, with weekly timesheets, approval workflows, project assignments, staffing views, and reporting.", accent: "from-[#66f0d0]/85 via-[#3ce4c3]/45 to-transparent" }, { label: "Current focus", title: "Building practical workflows", body: "Timesheet submission, manager approvals, project-scoped access, employee invitations, staffing targets, labor-cost reporting, and organization workflows.", accent: "from-[#7fe8ff]/80 via-[#41dfff]/35 to-transparent" }],
   },
   {
